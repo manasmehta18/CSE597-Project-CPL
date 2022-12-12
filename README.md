@@ -1,9 +1,10 @@
-# CPL: Weakly Supervised Temporal Sentence Grounding with Gaussian-based Contrastive Proposal Learning
+# CSE 597 Project: Weakly Supervised Temporal Sentence Grounding with Gaussian-based Contrastive Proposal Learning
 
-In this paper, we propose Contrastive ProposalLearning (CPL) for the weakly supervised temporal sentence grounding task. We use multiple learnable Gaussian functions to generate both positive and negative proposals within the same
-video that can characterize the multiple events in a long video. Then, we propose a controllable easy to hard negative proposal mining strategy to collect negative samples within the same video, which can ease the model optimization and enables CPL to distinguish highly confusing scenes. The experiments show that our method achieves state-of-the-art performance on Charades-STA and ActivityNet Captions datasets.
+This project is based on the following paper:
 
-Our paper was accepted by CVPR-2022. [[Paper](https://minghangz.github.io/uploads/CPL/CPL_paper.pdf)] [[Project Page](https://minghangz.github.io/publication/cpl/)]
+CPL: Weakly Supervised Temporal Sentence Grounding with Gaussian-based Contrastive Proposal Learning
+
+[[Paper](https://minghangz.github.io/uploads/CPL/CPL_paper.pdf)] [[Project Page](https://minghangz.github.io/publication/cpl/)] [[GitHub](https://github.com/minghangz/cpl)] 
 
 ## Pipeline
 
@@ -13,22 +14,12 @@ Our paper was accepted by CVPR-2022. [[Paper](https://minghangz.github.io/upload
 
 ### Charades-STA Dataset
 
-
 | Method  | Rank1@0.3 | Rank1@0.5 | Rank1@0.7 | Rank5@0.3 | Rank5@0.5 | Rank5@0.7 |
 | :-----: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
 |   CPL   |   66.40   |   49.24   |   22.39   |   96.99   |   84.71   |   52.37   |
 | CPL$^*$ |   65.99   |   49.05   |   22.61   |   96.99   |   84.71   |   52.37   |
 
-Our trained model can be downloaded from [here](checkpoints/charades/model-best.pt)
-
-### ActivityNet Captions Dataset
-
-| Method  | Rank1@0.1 | Rank1@0.3 | Rank1@0.5 | Rank5@0.1 | Rank5@0.3 | Rank5@0.5 |
-| :-----: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
-|   CPL   |   79.86   |   53.67   |   31.24   |   87.24   |   63.05   |   43.13   |
-| CPL$^*$ |   82.55   |   55.73   |   31.37   |   87.24   |   63.05   |   43.13   |
-
-Our trained model can be downloaded from [here](checkpoints/activitynet/model-best.pt)
+The trained models are in the checkpoints directory. 
 
 ## Requiments
 
