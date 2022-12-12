@@ -8,7 +8,7 @@ import torch
 from models.loss import ivc_loss, cal_nll_loss, rec_loss
 from utils import TimeMeter, AverageMeter
 
-import pickle
+import dill as pickle
 import copy
 from pathlib import Path
 import pdb
@@ -44,7 +44,7 @@ class MainRunner:
             results = self.eval()
             if best_results is None or results['R@1,mIoU'].avg > best_results['R@1,mIoU'].avg:
                 best_results = results
-                os.system('cp %s %s'%(save_path, os.path.join(self.model_saved_path, 'model-best.pt')))
+                os.system('copy "%s" "%s"'%(save_path, os.path.join(self.model_saved_path, 'model-best-max.pt')))
                 info('Best results have been updated.')
             info('=' * 60)
         
@@ -184,7 +184,7 @@ class MainRunner:
             set_seed(8 + worker_id)
 
         self.train_loader = DataLoader(self.train_set, batch_size=batch_size, shuffle=True,
-                                       collate_fn=self.train_set.collate_data, num_workers=2,
+                                       collate_fn=self.train_set.collate_data, num_workers=0,
                                        worker_init_fn=worker_init_fn)
         self.test_loader = DataLoader(self.test_set, batch_size=batch_size, shuffle=False,
                                       collate_fn=self.test_set.collate_data,

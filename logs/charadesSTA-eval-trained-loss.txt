@@ -1,0 +1,106 @@
+(cpl1) C:\Users\manas\Desktop\CS 597\project\cpl>python train.py --config-path config/charades/main.json --resume checkpoints\charades\base\model-best-max.pt --eval
+2022-12-09 14:55:14,756 - {'dataset': {'dataset': 'CharadesSTA', 'feature_path': 'data/charades/i3d_features.hdf5', 'vocab_size': 1111, 'word_dim': 300, 'frame_dim': 1024, 'max_num_words': 20, 'max_num_frames': 200, 'target_stride': 1, 'train_data': 'data/charades/train.json', 'test_data': 'data/charades/test.json', 'val_data': 'data/charades/test.json', 'vocab_path': 'data/charades/glove.pkl'}, 'train': {'optimizer': {'lr': 0.0004, 'weight_decay': 0, 'warmup_updates': 400, 'warmup_init_lr': 1e-07}, 'batch_size': 32, 'max_num_epochs': 30, 'model_saved_path': 'checkpoints/charades/base'}, 'model': {'name': 'CPL', 'config': {'frames_input_size': 1024, 'words_input_size': 300, 'hidden_size': 256, 'use_negative': True, 'num_props': 8, 'sigma': 9, 'gamma': 0.5, 'dropout': 0.1, 'DualTransformer': {'d_model': 256, 'num_heads': 4, 'num_decoder_layers1': 3, 'num_decoder_layers2': 3, 'dropout': 0.1}}}, 'loss': {'margin_1': 0.1, 'margin_2': 0.15, 'lambda': 0.146, 'alpha_1': 1, 'alpha_2': 5}, 'vote': False}
+train: 10602 samples, test: 3158 samples
+2022-12-09 14:55:15,017 - train: 10602 samples, test: 3158 samples
+CPL(
+  (frame_fc): Linear(in_features=1024, out_features=256, bias=True)
+  (word_fc): Linear(in_features=300, out_features=256, bias=True)
+  (trans): DualTransformer(
+    (decoder1): TransformerDecoder(
+      (decoder_layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (decoder2): TransformerDecoder(
+      (decoder_layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+  )
+  (fc_comp): Linear(in_features=256, out_features=1112, bias=True)
+  (fc_gauss): Linear(in_features=256, out_features=16, bias=True)
+  (word_pos_encoder): SinusoidalPositionalEmbedding()
+)
+Total: 5375680 Trainable: 5375680
+load model from checkpoints\charades\base\model-best-max.pt, num_updates 3652.
+2022-12-09 14:55:16,071 - load model from checkpoints\charades\base\model-best-max.pt, num_updates 3652.
+| R@1,mIoU 0.4385 | R@1,IoU@0.1 0.7597 | R@1,IoU@0.3 0.6713 | R@1,IoU@0.5 0.4972 | R@1,IoU@0.7 0.2343 | R@1,IoU@0.9 0.0355 | R@5,mIoU 0.6755 | R@5,IoU@0.1 0.9858 | R@5,IoU@0.3 0.9649 | R@5,IoU@0.5 0.8439 | R@5,IoU@0.7 0.5133 | R@5,IoU@0.9 0.0855 |
+2022-12-09 14:55:40,000 - | R@1,mIoU 0.4385 | R@1,IoU@0.1 0.7597 | R@1,IoU@0.3 0.6713 | R@1,IoU@0.5 0.4972 | R@1,IoU@0.7 0.2343 | R@1,IoU@0.9 0.0355 | R@5,mIoU 0.6755 | R@5,IoU@0.1 0.9858 | R@5,IoU@0.3 0.9649 | R@5,IoU@0.5 0.8439 | R@5,IoU@0.7 0.5133 | R@5,IoU@0.9 0.0855 |
+
+(cpl1) C:\Users\manas\Desktop\CS 597\project\cpl>
