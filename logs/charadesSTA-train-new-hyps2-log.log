@@ -1,0 +1,203 @@
+2022-12-12 23:06:16,801 - {'dataset': {'dataset': 'CharadesSTA', 'feature_path': 'data/charades/i3d_features.hdf5', 'vocab_size': 1111, 'word_dim': 300, 'frame_dim': 1024, 'max_num_words': 20, 'max_num_frames': 200, 'target_stride': 1, 'train_data': 'data/charades/train.json', 'test_data': 'data/charades/test.json', 'val_data': 'data/charades/test.json', 'vocab_path': 'data/charades/glove.pkl'}, 'train': {'optimizer': {'lr': 0.0004, 'weight_decay': 0, 'warmup_updates': 400, 'warmup_init_lr': 1e-07}, 'batch_size': 32, 'max_num_epochs': 30, 'model_saved_path': 'checkpoints/charades/base'}, 'model': {'name': 'CPL', 'config': {'frames_input_size': 1024, 'words_input_size': 300, 'hidden_size': 256, 'use_negative': True, 'num_props': 8, 'sigma': 9, 'gamma': 0.5, 'dropout': 0.1, 'DualTransformer': {'d_model': 256, 'num_heads': 4, 'num_decoder_layers1': 3, 'num_decoder_layers2': 3, 'dropout': 0.1}}}, 'loss': {'margin_1': 0.1, 'margin_2': 0.15, 'lambda': 0.16, 'alpha_1': 2, 'alpha_2': 5}, 'vote': False}
+2022-12-12 23:06:17,054 - train: 10602 samples, test: 3158 samples
+2022-12-12 23:06:18,064 - Start Epoch 1
+2022-12-12 23:06:35,627 - Epoch 1, Batch 50, lr = 0.00005, final_loss = 6.3136, nll_loss = 6.2694, ref_nll_loss = 6.3577, ivc_loss = 0.7113, neg_loss_1 = 0.0441, neg_loss_2 = 0.0446, ref_loss = 0.0388, div_loss = 0.0913, 0.351 seconds/batch
+2022-12-12 23:06:52,004 - Epoch 1, Batch 100, lr = 0.00010, final_loss = 4.8399, nll_loss = 4.8060, ref_nll_loss = 4.8737, ivc_loss = 0.3312, neg_loss_1 = 0.0315, neg_loss_2 = 0.0327, ref_loss = 0.0482, div_loss = 0.0213, 0.339 seconds/batch
+2022-12-12 23:07:08,379 - Epoch 1, Batch 150, lr = 0.00015, final_loss = 4.1937, nll_loss = 4.1418, ref_nll_loss = 4.2456, ivc_loss = 0.2272, neg_loss_1 = 0.0251, neg_loss_2 = 0.0243, ref_loss = 0.0349, div_loss = 0.0117, 0.335 seconds/batch
+2022-12-12 23:07:24,787 - Epoch 1, Batch 200, lr = 0.00020, final_loss = 3.8061, nll_loss = 3.7468, ref_nll_loss = 3.8654, ivc_loss = 0.2043, neg_loss_1 = 0.0250, neg_loss_2 = 0.0222, ref_loss = 0.0317, div_loss = 0.0093, 0.334 seconds/batch
+2022-12-12 23:07:41,223 - Epoch 1, Batch 250, lr = 0.00025, final_loss = 3.6036, nll_loss = 3.5418, ref_nll_loss = 3.6654, ivc_loss = 0.2005, neg_loss_1 = 0.0247, neg_loss_2 = 0.0231, ref_loss = 0.0294, div_loss = 0.0092, 0.333 seconds/batch
+2022-12-12 23:07:57,665 - Epoch 1, Batch 300, lr = 0.00030, final_loss = 3.4383, nll_loss = 3.3785, ref_nll_loss = 3.4982, ivc_loss = 0.1941, neg_loss_1 = 0.0231, neg_loss_2 = 0.0204, ref_loss = 0.0317, div_loss = 0.0087, 0.332 seconds/batch
+2022-12-12 23:08:08,016 - Epoch 1, Batch 332, lr = 0.00033, final_loss = 3.3586, nll_loss = 3.2921, ref_nll_loss = 3.4252, ivc_loss = 0.1904, neg_loss_1 = 0.0231, neg_loss_2 = 0.0207, ref_loss = 0.0297, div_loss = 0.0087, 0.331 seconds/batch
+2022-12-12 23:08:08,048 - save model to checkpoints/charades/base\model-1.pt, num_updates 332.
+2022-12-12 23:08:31,292 - | R@1,mIoU 0.2793 | R@1,IoU@0.1 0.5405 | R@1,IoU@0.3 0.4202 | R@1,IoU@0.5 0.2850 | R@1,IoU@0.7 0.1267 | R@1,IoU@0.9 0.0171 | R@5,mIoU 0.6033 | R@5,IoU@0.1 0.9474 | R@5,IoU@0.3 0.8809 | R@5,IoU@0.5 0.7274 | R@5,IoU@0.7 0.3952 | R@5,IoU@0.9 0.0649 |
+2022-12-12 23:08:31,321 - Best results have been updated.
+2022-12-12 23:08:31,321 - ============================================================
+2022-12-12 23:08:31,321 - Start Epoch 2
+2022-12-12 23:08:48,671 - Epoch 2, Batch 50, lr = 0.00038, final_loss = 3.2848, nll_loss = 3.2150, ref_nll_loss = 3.3547, ivc_loss = 0.1842, neg_loss_1 = 0.0214, neg_loss_2 = 0.0206, ref_loss = 0.0280, div_loss = 0.0088, 0.347 seconds/batch
+2022-12-12 23:09:05,745 - Epoch 2, Batch 100, lr = 0.00038, final_loss = 3.1938, nll_loss = 3.1212, ref_nll_loss = 3.2664, ivc_loss = 0.1699, neg_loss_1 = 0.0193, neg_loss_2 = 0.0180, ref_loss = 0.0272, div_loss = 0.0082, 0.344 seconds/batch
+2022-12-12 23:09:22,605 - Epoch 2, Batch 150, lr = 0.00036, final_loss = 3.1271, nll_loss = 3.0514, ref_nll_loss = 3.2028, ivc_loss = 0.1540, neg_loss_1 = 0.0208, neg_loss_2 = 0.0186, ref_loss = 0.0253, div_loss = 0.0049, 0.342 seconds/batch
+2022-12-12 23:09:39,708 - Epoch 2, Batch 200, lr = 0.00035, final_loss = 3.0991, nll_loss = 3.0211, ref_nll_loss = 3.1771, ivc_loss = 0.1539, neg_loss_1 = 0.0197, neg_loss_2 = 0.0189, ref_loss = 0.0262, div_loss = 0.0049, 0.342 seconds/batch
+2022-12-12 23:09:57,315 - Epoch 2, Batch 250, lr = 0.00033, final_loss = 3.0402, nll_loss = 2.9568, ref_nll_loss = 3.1236, ivc_loss = 0.1412, neg_loss_1 = 0.0161, neg_loss_2 = 0.0164, ref_loss = 0.0243, div_loss = 0.0055, 0.344 seconds/batch
+2022-12-12 23:10:14,456 - Epoch 2, Batch 300, lr = 0.00032, final_loss = 2.9905, nll_loss = 2.9130, ref_nll_loss = 3.0680, ivc_loss = 0.1439, neg_loss_1 = 0.0177, neg_loss_2 = 0.0168, ref_loss = 0.0267, div_loss = 0.0043, 0.344 seconds/batch
+2022-12-12 23:10:24,770 - Epoch 2, Batch 332, lr = 0.00031, final_loss = 2.9770, nll_loss = 2.8973, ref_nll_loss = 3.0566, ivc_loss = 0.1275, neg_loss_1 = 0.0142, neg_loss_2 = 0.0153, ref_loss = 0.0251, div_loss = 0.0037, 0.342 seconds/batch
+2022-12-12 23:10:24,801 - save model to checkpoints/charades/base\model-2.pt, num_updates 664.
+2022-12-12 23:10:47,902 - | R@1,mIoU 0.3304 | R@1,IoU@0.1 0.6127 | R@1,IoU@0.3 0.5041 | R@1,IoU@0.5 0.3569 | R@1,IoU@0.7 0.1514 | R@1,IoU@0.9 0.0260 | R@5,mIoU 0.6542 | R@5,IoU@0.1 0.9820 | R@5,IoU@0.3 0.9487 | R@5,IoU@0.5 0.8132 | R@5,IoU@0.7 0.4560 | R@5,IoU@0.9 0.0801 |
+2022-12-12 23:10:47,928 - Best results have been updated.
+2022-12-12 23:10:47,929 - ============================================================
+2022-12-12 23:10:47,929 - Start Epoch 3
+2022-12-12 23:11:04,447 - Epoch 3, Batch 50, lr = 0.00030, final_loss = 2.9362, nll_loss = 2.8475, ref_nll_loss = 3.0248, ivc_loss = 0.1192, neg_loss_1 = 0.0127, neg_loss_2 = 0.0133, ref_loss = 0.0229, div_loss = 0.0043, 0.330 seconds/batch
+2022-12-12 23:11:20,818 - Epoch 3, Batch 100, lr = 0.00029, final_loss = 2.8916, nll_loss = 2.8061, ref_nll_loss = 2.9770, ivc_loss = 0.1209, neg_loss_1 = 0.0135, neg_loss_2 = 0.0138, ref_loss = 0.0230, div_loss = 0.0040, 0.329 seconds/batch
+2022-12-12 23:11:37,168 - Epoch 3, Batch 150, lr = 0.00028, final_loss = 2.9020, nll_loss = 2.8187, ref_nll_loss = 2.9853, ivc_loss = 0.1228, neg_loss_1 = 0.0146, neg_loss_2 = 0.0134, ref_loss = 0.0246, div_loss = 0.0035, 0.328 seconds/batch
+2022-12-12 23:11:53,532 - Epoch 3, Batch 200, lr = 0.00027, final_loss = 2.8565, nll_loss = 2.7734, ref_nll_loss = 2.9396, ivc_loss = 0.1265, neg_loss_1 = 0.0161, neg_loss_2 = 0.0127, ref_loss = 0.0252, div_loss = 0.0037, 0.328 seconds/batch
+2022-12-12 23:12:09,887 - Epoch 3, Batch 250, lr = 0.00026, final_loss = 2.8256, nll_loss = 2.7404, ref_nll_loss = 2.9108, ivc_loss = 0.1155, neg_loss_1 = 0.0137, neg_loss_2 = 0.0133, ref_loss = 0.0226, div_loss = 0.0032, 0.328 seconds/batch
+2022-12-12 23:12:26,304 - Epoch 3, Batch 300, lr = 0.00026, final_loss = 2.7993, nll_loss = 2.7148, ref_nll_loss = 2.8837, ivc_loss = 0.1148, neg_loss_1 = 0.0133, neg_loss_2 = 0.0114, ref_loss = 0.0238, div_loss = 0.0036, 0.328 seconds/batch
+2022-12-12 23:12:36,778 - Epoch 3, Batch 332, lr = 0.00025, final_loss = 2.7956, nll_loss = 2.7087, ref_nll_loss = 2.8826, ivc_loss = 0.1151, neg_loss_1 = 0.0132, neg_loss_2 = 0.0120, ref_loss = 0.0215, div_loss = 0.0044, 0.328 seconds/batch
+2022-12-12 23:12:36,809 - save model to checkpoints/charades/base\model-3.pt, num_updates 996.
+2022-12-12 23:12:59,952 - | R@1,mIoU 0.3619 | R@1,IoU@0.1 0.6564 | R@1,IoU@0.3 0.5456 | R@1,IoU@0.5 0.3958 | R@1,IoU@0.7 0.1735 | R@1,IoU@0.9 0.0269 | R@5,mIoU 0.6600 | R@5,IoU@0.1 0.9826 | R@5,IoU@0.3 0.9481 | R@5,IoU@0.5 0.8442 | R@5,IoU@0.7 0.4364 | R@5,IoU@0.9 0.0807 |
+2022-12-12 23:12:59,982 - Best results have been updated.
+2022-12-12 23:12:59,982 - ============================================================
+2022-12-12 23:12:59,982 - Start Epoch 4
+2022-12-12 23:13:16,415 - Epoch 4, Batch 50, lr = 0.00025, final_loss = 2.7704, nll_loss = 2.6838, ref_nll_loss = 2.8569, ivc_loss = 0.1153, neg_loss_1 = 0.0147, neg_loss_2 = 0.0136, ref_loss = 0.0216, div_loss = 0.0031, 0.329 seconds/batch
+2022-12-12 23:13:32,822 - Epoch 4, Batch 100, lr = 0.00024, final_loss = 2.7626, nll_loss = 2.6699, ref_nll_loss = 2.8554, ivc_loss = 0.1022, neg_loss_1 = 0.0137, neg_loss_2 = 0.0119, ref_loss = 0.0193, div_loss = 0.0025, 0.328 seconds/batch
+2022-12-12 23:13:49,218 - Epoch 4, Batch 150, lr = 0.00024, final_loss = 2.7746, nll_loss = 2.6842, ref_nll_loss = 2.8650, ivc_loss = 0.1126, neg_loss_1 = 0.0152, neg_loss_2 = 0.0121, ref_loss = 0.0210, div_loss = 0.0032, 0.328 seconds/batch
+2022-12-12 23:14:05,572 - Epoch 4, Batch 200, lr = 0.00023, final_loss = 2.7448, nll_loss = 2.6541, ref_nll_loss = 2.8354, ivc_loss = 0.1054, neg_loss_1 = 0.0120, neg_loss_2 = 0.0122, ref_loss = 0.0216, div_loss = 0.0028, 0.328 seconds/batch
+2022-12-12 23:14:21,973 - Epoch 4, Batch 250, lr = 0.00023, final_loss = 2.7523, nll_loss = 2.6547, ref_nll_loss = 2.8499, ivc_loss = 0.0953, neg_loss_1 = 0.0099, neg_loss_2 = 0.0122, ref_loss = 0.0192, div_loss = 0.0025, 0.328 seconds/batch
+2022-12-12 23:14:38,414 - Epoch 4, Batch 300, lr = 0.00022, final_loss = 2.7425, nll_loss = 2.6460, ref_nll_loss = 2.8390, ivc_loss = 0.0982, neg_loss_1 = 0.0107, neg_loss_2 = 0.0104, ref_loss = 0.0209, div_loss = 0.0028, 0.328 seconds/batch
+2022-12-12 23:14:48,745 - Epoch 4, Batch 332, lr = 0.00022, final_loss = 2.6763, nll_loss = 2.5873, ref_nll_loss = 2.7653, ivc_loss = 0.1054, neg_loss_1 = 0.0129, neg_loss_2 = 0.0117, ref_loss = 0.0222, div_loss = 0.0024, 0.328 seconds/batch
+2022-12-12 23:14:48,776 - save model to checkpoints/charades/base\model-4.pt, num_updates 1328.
+2022-12-12 23:15:11,904 - | R@1,mIoU 0.3876 | R@1,IoU@0.1 0.7020 | R@1,IoU@0.3 0.5880 | R@1,IoU@0.5 0.4313 | R@1,IoU@0.7 0.1862 | R@1,IoU@0.9 0.0199 | R@5,mIoU 0.6721 | R@5,IoU@0.1 0.9877 | R@5,IoU@0.3 0.9630 | R@5,IoU@0.5 0.8461 | R@5,IoU@0.7 0.4943 | R@5,IoU@0.9 0.0560 |
+2022-12-12 23:15:11,931 - Best results have been updated.
+2022-12-12 23:15:11,931 - ============================================================
+2022-12-12 23:15:11,931 - Start Epoch 5
+2022-12-12 23:15:28,352 - Epoch 5, Batch 50, lr = 0.00022, final_loss = 2.6941, nll_loss = 2.6006, ref_nll_loss = 2.7876, ivc_loss = 0.1023, neg_loss_1 = 0.0131, neg_loss_2 = 0.0111, ref_loss = 0.0205, div_loss = 0.0026, 0.328 seconds/batch
+2022-12-12 23:15:44,772 - Epoch 5, Batch 100, lr = 0.00021, final_loss = 2.6964, nll_loss = 2.6017, ref_nll_loss = 2.7911, ivc_loss = 0.1005, neg_loss_1 = 0.0126, neg_loss_2 = 0.0102, ref_loss = 0.0200, div_loss = 0.0030, 0.328 seconds/batch
+2022-12-12 23:16:01,147 - Epoch 5, Batch 150, lr = 0.00021, final_loss = 2.6706, nll_loss = 2.5725, ref_nll_loss = 2.7688, ivc_loss = 0.0900, neg_loss_1 = 0.0111, neg_loss_2 = 0.0096, ref_loss = 0.0183, div_loss = 0.0024, 0.328 seconds/batch
+2022-12-12 23:16:17,587 - Epoch 5, Batch 200, lr = 0.00020, final_loss = 2.6590, nll_loss = 2.5648, ref_nll_loss = 2.7532, ivc_loss = 0.0983, neg_loss_1 = 0.0132, neg_loss_2 = 0.0101, ref_loss = 0.0201, div_loss = 0.0023, 0.328 seconds/batch
+2022-12-12 23:16:33,958 - Epoch 5, Batch 250, lr = 0.00020, final_loss = 2.7005, nll_loss = 2.5983, ref_nll_loss = 2.8028, ivc_loss = 0.0925, neg_loss_1 = 0.0101, neg_loss_2 = 0.0118, ref_loss = 0.0183, div_loss = 0.0024, 0.328 seconds/batch
+2022-12-12 23:16:50,326 - Epoch 5, Batch 300, lr = 0.00020, final_loss = 2.6578, nll_loss = 2.5611, ref_nll_loss = 2.7546, ivc_loss = 0.0915, neg_loss_1 = 0.0108, neg_loss_2 = 0.0095, ref_loss = 0.0203, div_loss = 0.0020, 0.328 seconds/batch
+2022-12-12 23:17:00,685 - Epoch 5, Batch 332, lr = 0.00020, final_loss = 2.6745, nll_loss = 2.5740, ref_nll_loss = 2.7751, ivc_loss = 0.0875, neg_loss_1 = 0.0120, neg_loss_2 = 0.0089, ref_loss = 0.0160, div_loss = 0.0028, 0.328 seconds/batch
+2022-12-12 23:17:00,714 - save model to checkpoints/charades/base\model-5.pt, num_updates 1660.
+2022-12-12 23:17:23,445 - | R@1,mIoU 0.3937 | R@1,IoU@0.1 0.7096 | R@1,IoU@0.3 0.6004 | R@1,IoU@0.5 0.4322 | R@1,IoU@0.7 0.1890 | R@1,IoU@0.9 0.0342 | R@5,mIoU 0.6773 | R@5,IoU@0.1 0.9864 | R@5,IoU@0.3 0.9649 | R@5,IoU@0.5 0.8540 | R@5,IoU@0.7 0.5070 | R@5,IoU@0.9 0.0874 |
+2022-12-12 23:17:23,471 - Best results have been updated.
+2022-12-12 23:17:23,471 - ============================================================
+2022-12-12 23:17:23,471 - Start Epoch 6
+2022-12-12 23:17:39,955 - Epoch 6, Batch 50, lr = 0.00019, final_loss = 2.6694, nll_loss = 2.5679, ref_nll_loss = 2.7709, ivc_loss = 0.0942, neg_loss_1 = 0.0111, neg_loss_2 = 0.0099, ref_loss = 0.0192, div_loss = 0.0028, 0.330 seconds/batch
+2022-12-12 23:17:56,327 - Epoch 6, Batch 100, lr = 0.00019, final_loss = 2.6264, nll_loss = 2.5280, ref_nll_loss = 2.7247, ivc_loss = 0.0887, neg_loss_1 = 0.0103, neg_loss_2 = 0.0103, ref_loss = 0.0181, div_loss = 0.0023, 0.329 seconds/batch
+2022-12-12 23:18:12,729 - Epoch 6, Batch 150, lr = 0.00019, final_loss = 2.6065, nll_loss = 2.5026, ref_nll_loss = 2.7104, ivc_loss = 0.0816, neg_loss_1 = 0.0102, neg_loss_2 = 0.0084, ref_loss = 0.0168, div_loss = 0.0021, 0.328 seconds/batch
+2022-12-12 23:18:29,117 - Epoch 6, Batch 200, lr = 0.00019, final_loss = 2.6264, nll_loss = 2.5269, ref_nll_loss = 2.7258, ivc_loss = 0.0947, neg_loss_1 = 0.0120, neg_loss_2 = 0.0112, ref_loss = 0.0180, div_loss = 0.0024, 0.328 seconds/batch
+2022-12-12 23:18:45,450 - Epoch 6, Batch 250, lr = 0.00018, final_loss = 2.5909, nll_loss = 2.4857, ref_nll_loss = 2.6961, ivc_loss = 0.0829, neg_loss_1 = 0.0106, neg_loss_2 = 0.0104, ref_loss = 0.0156, div_loss = 0.0019, 0.328 seconds/batch
+2022-12-12 23:19:01,833 - Epoch 6, Batch 300, lr = 0.00018, final_loss = 2.6501, nll_loss = 2.5489, ref_nll_loss = 2.7513, ivc_loss = 0.0876, neg_loss_1 = 0.0112, neg_loss_2 = 0.0097, ref_loss = 0.0179, div_loss = 0.0020, 0.328 seconds/batch
+2022-12-12 23:19:12,203 - Epoch 6, Batch 332, lr = 0.00018, final_loss = 2.6280, nll_loss = 2.5243, ref_nll_loss = 2.7316, ivc_loss = 0.0834, neg_loss_1 = 0.0082, neg_loss_2 = 0.0122, ref_loss = 0.0148, div_loss = 0.0026, 0.328 seconds/batch
+2022-12-12 23:19:12,232 - save model to checkpoints/charades/base\model-6.pt, num_updates 1992.
+2022-12-12 23:19:35,299 - | R@1,mIoU 0.3978 | R@1,IoU@0.1 0.6906 | R@1,IoU@0.3 0.5991 | R@1,IoU@0.5 0.4535 | R@1,IoU@0.7 0.1998 | R@1,IoU@0.9 0.0336 | R@5,mIoU 0.6841 | R@5,IoU@0.1 0.9870 | R@5,IoU@0.3 0.9680 | R@5,IoU@0.5 0.8619 | R@5,IoU@0.7 0.5193 | R@5,IoU@0.9 0.0874 |
+2022-12-12 23:19:35,326 - Best results have been updated.
+2022-12-12 23:19:35,327 - ============================================================
+2022-12-12 23:19:35,327 - Start Epoch 7
+2022-12-12 23:19:51,795 - Epoch 7, Batch 50, lr = 0.00018, final_loss = 2.5819, nll_loss = 2.4800, ref_nll_loss = 2.6839, ivc_loss = 0.0851, neg_loss_1 = 0.0099, neg_loss_2 = 0.0085, ref_loss = 0.0176, div_loss = 0.0026, 0.329 seconds/batch
+2022-12-12 23:20:08,225 - Epoch 7, Batch 100, lr = 0.00017, final_loss = 2.6119, nll_loss = 2.5100, ref_nll_loss = 2.7139, ivc_loss = 0.0844, neg_loss_1 = 0.0086, neg_loss_2 = 0.0092, ref_loss = 0.0194, div_loss = 0.0020, 0.329 seconds/batch
+2022-12-12 23:20:24,941 - Epoch 7, Batch 150, lr = 0.00017, final_loss = 2.5980, nll_loss = 2.4961, ref_nll_loss = 2.7000, ivc_loss = 0.0793, neg_loss_1 = 0.0102, neg_loss_2 = 0.0085, ref_loss = 0.0159, div_loss = 0.0020, 0.331 seconds/batch
+2022-12-12 23:20:41,529 - Epoch 7, Batch 200, lr = 0.00017, final_loss = 2.5885, nll_loss = 2.4854, ref_nll_loss = 2.6916, ivc_loss = 0.0824, neg_loss_1 = 0.0111, neg_loss_2 = 0.0079, ref_loss = 0.0175, div_loss = 0.0019, 0.331 seconds/batch
+2022-12-12 23:20:58,108 - Epoch 7, Batch 250, lr = 0.00017, final_loss = 2.6183, nll_loss = 2.5114, ref_nll_loss = 2.7253, ivc_loss = 0.0904, neg_loss_1 = 0.0126, neg_loss_2 = 0.0091, ref_loss = 0.0159, div_loss = 0.0030, 0.331 seconds/batch
+2022-12-12 23:21:14,701 - Epoch 7, Batch 300, lr = 0.00017, final_loss = 2.5725, nll_loss = 2.4676, ref_nll_loss = 2.6774, ivc_loss = 0.0817, neg_loss_1 = 0.0110, neg_loss_2 = 0.0086, ref_loss = 0.0161, div_loss = 0.0020, 0.331 seconds/batch
+2022-12-12 23:21:25,183 - Epoch 7, Batch 332, lr = 0.00017, final_loss = 2.5847, nll_loss = 2.4852, ref_nll_loss = 2.6843, ivc_loss = 0.0910, neg_loss_1 = 0.0102, neg_loss_2 = 0.0097, ref_loss = 0.0212, div_loss = 0.0018, 0.331 seconds/batch
+2022-12-12 23:21:25,210 - save model to checkpoints/charades/base\model-7.pt, num_updates 2324.
+2022-12-12 23:21:48,239 - | R@1,mIoU 0.4094 | R@1,IoU@0.1 0.7251 | R@1,IoU@0.3 0.6159 | R@1,IoU@0.5 0.4633 | R@1,IoU@0.7 0.2042 | R@1,IoU@0.9 0.0326 | R@5,mIoU 0.6808 | R@5,IoU@0.1 0.9896 | R@5,IoU@0.3 0.9658 | R@5,IoU@0.5 0.8597 | R@5,IoU@0.7 0.5089 | R@5,IoU@0.9 0.0760 |
+2022-12-12 23:21:48,267 - Best results have been updated.
+2022-12-12 23:21:48,267 - ============================================================
+2022-12-12 23:21:48,267 - Start Epoch 8
+2022-12-12 23:22:04,975 - Epoch 8, Batch 50, lr = 0.00016, final_loss = 2.5589, nll_loss = 2.4556, ref_nll_loss = 2.6621, ivc_loss = 0.0801, neg_loss_1 = 0.0088, neg_loss_2 = 0.0093, ref_loss = 0.0171, div_loss = 0.0019, 0.334 seconds/batch
+2022-12-12 23:22:21,612 - Epoch 8, Batch 100, lr = 0.00016, final_loss = 2.5795, nll_loss = 2.4755, ref_nll_loss = 2.6834, ivc_loss = 0.0826, neg_loss_1 = 0.0103, neg_loss_2 = 0.0087, ref_loss = 0.0173, div_loss = 0.0020, 0.333 seconds/batch
+2022-12-12 23:22:38,447 - Epoch 8, Batch 150, lr = 0.00016, final_loss = 2.5624, nll_loss = 2.4546, ref_nll_loss = 2.6702, ivc_loss = 0.0759, neg_loss_1 = 0.0094, neg_loss_2 = 0.0083, ref_loss = 0.0155, div_loss = 0.0019, 0.335 seconds/batch
+2022-12-12 23:22:55,016 - Epoch 8, Batch 200, lr = 0.00016, final_loss = 2.5661, nll_loss = 2.4618, ref_nll_loss = 2.6705, ivc_loss = 0.0777, neg_loss_1 = 0.0098, neg_loss_2 = 0.0082, ref_loss = 0.0153, div_loss = 0.0022, 0.334 seconds/batch
+2022-12-12 23:23:11,672 - Epoch 8, Batch 250, lr = 0.00016, final_loss = 2.5532, nll_loss = 2.4455, ref_nll_loss = 2.6609, ivc_loss = 0.0749, neg_loss_1 = 0.0088, neg_loss_2 = 0.0073, ref_loss = 0.0167, div_loss = 0.0018, 0.334 seconds/batch
+2022-12-12 23:23:28,070 - Epoch 8, Batch 300, lr = 0.00016, final_loss = 2.5380, nll_loss = 2.4325, ref_nll_loss = 2.6435, ivc_loss = 0.0771, neg_loss_1 = 0.0105, neg_loss_2 = 0.0080, ref_loss = 0.0157, div_loss = 0.0017, 0.333 seconds/batch
+2022-12-12 23:23:38,415 - Epoch 8, Batch 332, lr = 0.00016, final_loss = 2.5717, nll_loss = 2.4694, ref_nll_loss = 2.6741, ivc_loss = 0.0770, neg_loss_1 = 0.0092, neg_loss_2 = 0.0074, ref_loss = 0.0178, div_loss = 0.0017, 0.332 seconds/batch
+2022-12-12 23:23:38,444 - save model to checkpoints/charades/base\model-8.pt, num_updates 2656.
+2022-12-12 23:24:01,581 - | R@1,mIoU 0.4036 | R@1,IoU@0.1 0.7185 | R@1,IoU@0.3 0.6092 | R@1,IoU@0.5 0.4449 | R@1,IoU@0.7 0.2030 | R@1,IoU@0.9 0.0393 | R@5,mIoU 0.6849 | R@5,IoU@0.1 0.9889 | R@5,IoU@0.3 0.9721 | R@5,IoU@0.5 0.8607 | R@5,IoU@0.7 0.5060 | R@5,IoU@0.9 0.0896 |
+2022-12-12 23:24:01,582 - ============================================================
+2022-12-12 23:24:01,582 - Start Epoch 9
+2022-12-12 23:24:18,065 - Epoch 9, Batch 50, lr = 0.00015, final_loss = 2.5126, nll_loss = 2.4054, ref_nll_loss = 2.6197, ivc_loss = 0.0718, neg_loss_1 = 0.0082, neg_loss_2 = 0.0067, ref_loss = 0.0163, div_loss = 0.0019, 0.330 seconds/batch
+2022-12-12 23:24:34,426 - Epoch 9, Batch 100, lr = 0.00015, final_loss = 2.5274, nll_loss = 2.4217, ref_nll_loss = 2.6330, ivc_loss = 0.0806, neg_loss_1 = 0.0105, neg_loss_2 = 0.0093, ref_loss = 0.0165, div_loss = 0.0016, 0.328 seconds/batch
+2022-12-12 23:24:50,782 - Epoch 9, Batch 150, lr = 0.00015, final_loss = 2.5617, nll_loss = 2.4526, ref_nll_loss = 2.6707, ivc_loss = 0.0787, neg_loss_1 = 0.0100, neg_loss_2 = 0.0076, ref_loss = 0.0168, div_loss = 0.0020, 0.328 seconds/batch
+2022-12-12 23:25:07,215 - Epoch 9, Batch 200, lr = 0.00015, final_loss = 2.5598, nll_loss = 2.4530, ref_nll_loss = 2.6667, ivc_loss = 0.0742, neg_loss_1 = 0.0092, neg_loss_2 = 0.0073, ref_loss = 0.0167, div_loss = 0.0016, 0.328 seconds/batch
+2022-12-12 23:25:23,678 - Epoch 9, Batch 250, lr = 0.00015, final_loss = 2.5312, nll_loss = 2.4222, ref_nll_loss = 2.6401, ivc_loss = 0.0774, neg_loss_1 = 0.0097, neg_loss_2 = 0.0088, ref_loss = 0.0149, div_loss = 0.0021, 0.328 seconds/batch
+2022-12-12 23:25:40,084 - Epoch 9, Batch 300, lr = 0.00015, final_loss = 2.5337, nll_loss = 2.4217, ref_nll_loss = 2.6457, ivc_loss = 0.0686, neg_loss_1 = 0.0091, neg_loss_2 = 0.0065, ref_loss = 0.0145, div_loss = 0.0017, 0.328 seconds/batch
+2022-12-12 23:25:50,427 - Epoch 9, Batch 332, lr = 0.00015, final_loss = 2.5248, nll_loss = 2.4125, ref_nll_loss = 2.6372, ivc_loss = 0.0701, neg_loss_1 = 0.0083, neg_loss_2 = 0.0081, ref_loss = 0.0141, div_loss = 0.0018, 0.328 seconds/batch
+2022-12-12 23:25:50,455 - save model to checkpoints/charades/base\model-9.pt, num_updates 2988.
+2022-12-12 23:26:13,652 - | R@1,mIoU 0.4035 | R@1,IoU@0.1 0.7109 | R@1,IoU@0.3 0.6092 | R@1,IoU@0.5 0.4544 | R@1,IoU@0.7 0.2125 | R@1,IoU@0.9 0.0291 | R@5,mIoU 0.6769 | R@5,IoU@0.1 0.9880 | R@5,IoU@0.3 0.9652 | R@5,IoU@0.5 0.8474 | R@5,IoU@0.7 0.5117 | R@5,IoU@0.9 0.0807 |
+2022-12-12 23:26:13,653 - ============================================================
+2022-12-12 23:26:13,653 - Start Epoch 10
+2022-12-12 23:26:30,118 - Epoch 10, Batch 50, lr = 0.00015, final_loss = 2.5047, nll_loss = 2.3942, ref_nll_loss = 2.6152, ivc_loss = 0.0690, neg_loss_1 = 0.0096, neg_loss_2 = 0.0065, ref_loss = 0.0136, div_loss = 0.0020, 0.329 seconds/batch
+2022-12-12 23:26:46,543 - Epoch 10, Batch 100, lr = 0.00014, final_loss = 2.5214, nll_loss = 2.4128, ref_nll_loss = 2.6299, ivc_loss = 0.0711, neg_loss_1 = 0.0096, neg_loss_2 = 0.0072, ref_loss = 0.0142, div_loss = 0.0018, 0.329 seconds/batch
+2022-12-12 23:27:02,920 - Epoch 10, Batch 150, lr = 0.00014, final_loss = 2.5192, nll_loss = 2.4103, ref_nll_loss = 2.6280, ivc_loss = 0.0752, neg_loss_1 = 0.0087, neg_loss_2 = 0.0081, ref_loss = 0.0164, div_loss = 0.0018, 0.328 seconds/batch
+2022-12-12 23:27:19,303 - Epoch 10, Batch 200, lr = 0.00014, final_loss = 2.4921, nll_loss = 2.3813, ref_nll_loss = 2.6030, ivc_loss = 0.0700, neg_loss_1 = 0.0081, neg_loss_2 = 0.0071, ref_loss = 0.0156, div_loss = 0.0017, 0.328 seconds/batch
+2022-12-12 23:27:35,783 - Epoch 10, Batch 250, lr = 0.00014, final_loss = 2.5138, nll_loss = 2.4051, ref_nll_loss = 2.6226, ivc_loss = 0.0738, neg_loss_1 = 0.0109, neg_loss_2 = 0.0081, ref_loss = 0.0144, div_loss = 0.0014, 0.329 seconds/batch
+2022-12-12 23:27:52,409 - Epoch 10, Batch 300, lr = 0.00014, final_loss = 2.5134, nll_loss = 2.4041, ref_nll_loss = 2.6227, ivc_loss = 0.0747, neg_loss_1 = 0.0108, neg_loss_2 = 0.0080, ref_loss = 0.0136, div_loss = 0.0020, 0.329 seconds/batch
+2022-12-12 23:28:02,780 - Epoch 10, Batch 332, lr = 0.00014, final_loss = 2.5175, nll_loss = 2.4031, ref_nll_loss = 2.6320, ivc_loss = 0.0667, neg_loss_1 = 0.0077, neg_loss_2 = 0.0062, ref_loss = 0.0143, div_loss = 0.0021, 0.329 seconds/batch
+2022-12-12 23:28:02,808 - save model to checkpoints/charades/base\model-10.pt, num_updates 3320.
+2022-12-12 23:28:26,073 - | R@1,mIoU 0.4032 | R@1,IoU@0.1 0.7093 | R@1,IoU@0.3 0.6121 | R@1,IoU@0.5 0.4509 | R@1,IoU@0.7 0.2090 | R@1,IoU@0.9 0.0231 | R@5,mIoU 0.6711 | R@5,IoU@0.1 0.9873 | R@5,IoU@0.3 0.9566 | R@5,IoU@0.5 0.8404 | R@5,IoU@0.7 0.4937 | R@5,IoU@0.9 0.0646 |
+2022-12-12 23:28:26,074 - ============================================================
+2022-12-12 23:28:26,075 - Start Epoch 11
+2022-12-12 23:28:42,511 - Epoch 11, Batch 50, lr = 0.00014, final_loss = 2.4927, nll_loss = 2.3832, ref_nll_loss = 2.6021, ivc_loss = 0.0684, neg_loss_1 = 0.0091, neg_loss_2 = 0.0074, ref_loss = 0.0140, div_loss = 0.0015, 0.329 seconds/batch
+2022-12-12 23:28:59,595 - Epoch 11, Batch 100, lr = 0.00014, final_loss = 2.4964, nll_loss = 2.3867, ref_nll_loss = 2.6060, ivc_loss = 0.0690, neg_loss_1 = 0.0078, neg_loss_2 = 0.0075, ref_loss = 0.0154, div_loss = 0.0015, 0.335 seconds/batch
+2022-12-12 23:29:16,250 - Epoch 11, Batch 150, lr = 0.00014, final_loss = 2.4786, nll_loss = 2.3651, ref_nll_loss = 2.5920, ivc_loss = 0.0711, neg_loss_1 = 0.0083, neg_loss_2 = 0.0084, ref_loss = 0.0143, div_loss = 0.0018, 0.334 seconds/batch
+2022-12-12 23:29:32,633 - Epoch 11, Batch 200, lr = 0.00013, final_loss = 2.4941, nll_loss = 2.3851, ref_nll_loss = 2.6031, ivc_loss = 0.0738, neg_loss_1 = 0.0084, neg_loss_2 = 0.0087, ref_loss = 0.0158, div_loss = 0.0016, 0.333 seconds/batch
+2022-12-12 23:29:49,282 - Epoch 11, Batch 250, lr = 0.00013, final_loss = 2.4849, nll_loss = 2.3699, ref_nll_loss = 2.5999, ivc_loss = 0.0675, neg_loss_1 = 0.0076, neg_loss_2 = 0.0080, ref_loss = 0.0139, div_loss = 0.0017, 0.333 seconds/batch
+2022-12-12 23:30:05,672 - Epoch 11, Batch 300, lr = 0.00013, final_loss = 2.5027, nll_loss = 2.3925, ref_nll_loss = 2.6128, ivc_loss = 0.0652, neg_loss_1 = 0.0072, neg_loss_2 = 0.0067, ref_loss = 0.0149, div_loss = 0.0015, 0.332 seconds/batch
+2022-12-12 23:30:16,076 - Epoch 11, Batch 332, lr = 0.00013, final_loss = 2.4702, nll_loss = 2.3594, ref_nll_loss = 2.5810, ivc_loss = 0.0626, neg_loss_1 = 0.0056, neg_loss_2 = 0.0073, ref_loss = 0.0148, div_loss = 0.0014, 0.331 seconds/batch
+2022-12-12 23:30:16,112 - save model to checkpoints/charades/base\model-11.pt, num_updates 3652.
+2022-12-12 23:30:39,401 - | R@1,mIoU 0.4120 | R@1,IoU@0.1 0.7122 | R@1,IoU@0.3 0.6254 | R@1,IoU@0.5 0.4769 | R@1,IoU@0.7 0.2103 | R@1,IoU@0.9 0.0310 | R@5,mIoU 0.6786 | R@5,IoU@0.1 0.9896 | R@5,IoU@0.3 0.9645 | R@5,IoU@0.5 0.8572 | R@5,IoU@0.7 0.4991 | R@5,IoU@0.9 0.0782 |
+2022-12-12 23:30:39,427 - Best results have been updated.
+2022-12-12 23:30:39,427 - ============================================================
+2022-12-12 23:30:39,427 - Start Epoch 12
+2022-12-12 23:30:55,925 - Epoch 12, Batch 50, lr = 0.00013, final_loss = 2.4389, nll_loss = 2.3310, ref_nll_loss = 2.5469, ivc_loss = 0.0682, neg_loss_1 = 0.0087, neg_loss_2 = 0.0066, ref_loss = 0.0150, div_loss = 0.0015, 0.330 seconds/batch
+2022-12-12 23:31:12,415 - Epoch 12, Batch 100, lr = 0.00013, final_loss = 2.5060, nll_loss = 2.3918, ref_nll_loss = 2.6201, ivc_loss = 0.0684, neg_loss_1 = 0.0081, neg_loss_2 = 0.0077, ref_loss = 0.0146, div_loss = 0.0015, 0.330 seconds/batch
+2022-12-12 23:31:29,123 - Epoch 12, Batch 150, lr = 0.00013, final_loss = 2.4748, nll_loss = 2.3626, ref_nll_loss = 2.5870, ivc_loss = 0.0630, neg_loss_1 = 0.0074, neg_loss_2 = 0.0067, ref_loss = 0.0136, div_loss = 0.0015, 0.331 seconds/batch
+2022-12-12 23:31:46,380 - Epoch 12, Batch 200, lr = 0.00013, final_loss = 2.4722, nll_loss = 2.3607, ref_nll_loss = 2.5837, ivc_loss = 0.0679, neg_loss_1 = 0.0091, neg_loss_2 = 0.0067, ref_loss = 0.0142, div_loss = 0.0016, 0.335 seconds/batch
+2022-12-12 23:32:02,989 - Epoch 12, Batch 250, lr = 0.00013, final_loss = 2.4546, nll_loss = 2.3434, ref_nll_loss = 2.5659, ivc_loss = 0.0678, neg_loss_1 = 0.0077, neg_loss_2 = 0.0083, ref_loss = 0.0141, div_loss = 0.0015, 0.334 seconds/batch
+2022-12-12 23:32:19,605 - Epoch 12, Batch 300, lr = 0.00013, final_loss = 2.4806, nll_loss = 2.3693, ref_nll_loss = 2.5920, ivc_loss = 0.0679, neg_loss_1 = 0.0078, neg_loss_2 = 0.0074, ref_loss = 0.0150, div_loss = 0.0015, 0.334 seconds/batch
+2022-12-12 23:32:30,241 - Epoch 12, Batch 332, lr = 0.00013, final_loss = 2.4511, nll_loss = 2.3447, ref_nll_loss = 2.5575, ivc_loss = 0.0785, neg_loss_1 = 0.0092, neg_loss_2 = 0.0079, ref_loss = 0.0174, div_loss = 0.0019, 0.334 seconds/batch
+2022-12-12 23:32:30,271 - save model to checkpoints/charades/base\model-12.pt, num_updates 3984.
+2022-12-12 23:32:53,303 - | R@1,mIoU 0.4128 | R@1,IoU@0.1 0.7201 | R@1,IoU@0.3 0.6279 | R@1,IoU@0.5 0.4671 | R@1,IoU@0.7 0.2150 | R@1,IoU@0.9 0.0269 | R@5,mIoU 0.6847 | R@5,IoU@0.1 0.9889 | R@5,IoU@0.3 0.9655 | R@5,IoU@0.5 0.8578 | R@5,IoU@0.7 0.5193 | R@5,IoU@0.9 0.0697 |
+2022-12-12 23:32:53,331 - Best results have been updated.
+2022-12-12 23:32:53,332 - ============================================================
+2022-12-12 23:32:53,332 - Start Epoch 13
+2022-12-12 23:33:10,330 - Epoch 13, Batch 50, lr = 0.00013, final_loss = 2.4609, nll_loss = 2.3496, ref_nll_loss = 2.5722, ivc_loss = 0.0686, neg_loss_1 = 0.0092, neg_loss_2 = 0.0066, ref_loss = 0.0147, div_loss = 0.0015, 0.340 seconds/batch
+2022-12-12 23:33:27,170 - Epoch 13, Batch 100, lr = 0.00013, final_loss = 2.4284, nll_loss = 2.3194, ref_nll_loss = 2.5373, ivc_loss = 0.0666, neg_loss_1 = 0.0079, neg_loss_2 = 0.0067, ref_loss = 0.0151, div_loss = 0.0015, 0.338 seconds/batch
+2022-12-12 23:33:44,042 - Epoch 13, Batch 150, lr = 0.00012, final_loss = 2.4588, nll_loss = 2.3462, ref_nll_loss = 2.5714, ivc_loss = 0.0695, neg_loss_1 = 0.0087, neg_loss_2 = 0.0073, ref_loss = 0.0148, div_loss = 0.0016, 0.338 seconds/batch
+2022-12-12 23:34:00,769 - Epoch 13, Batch 200, lr = 0.00012, final_loss = 2.4422, nll_loss = 2.3329, ref_nll_loss = 2.5516, ivc_loss = 0.0731, neg_loss_1 = 0.0085, neg_loss_2 = 0.0081, ref_loss = 0.0155, div_loss = 0.0018, 0.337 seconds/batch
+2022-12-12 23:34:17,654 - Epoch 13, Batch 250, lr = 0.00012, final_loss = 2.4536, nll_loss = 2.3377, ref_nll_loss = 2.5695, ivc_loss = 0.0620, neg_loss_1 = 0.0066, neg_loss_2 = 0.0057, ref_loss = 0.0141, div_loss = 0.0019, 0.337 seconds/batch
+2022-12-12 23:34:34,393 - Epoch 13, Batch 300, lr = 0.00012, final_loss = 2.4747, nll_loss = 2.3581, ref_nll_loss = 2.5914, ivc_loss = 0.0682, neg_loss_1 = 0.0093, neg_loss_2 = 0.0072, ref_loss = 0.0138, div_loss = 0.0015, 0.337 seconds/batch
+2022-12-12 23:34:44,880 - Epoch 13, Batch 332, lr = 0.00012, final_loss = 2.4619, nll_loss = 2.3496, ref_nll_loss = 2.5741, ivc_loss = 0.0659, neg_loss_1 = 0.0060, neg_loss_2 = 0.0063, ref_loss = 0.0158, div_loss = 0.0020, 0.336 seconds/batch
+2022-12-12 23:34:44,916 - save model to checkpoints/charades/base\model-13.pt, num_updates 4316.
+2022-12-12 23:35:08,356 - | R@1,mIoU 0.4237 | R@1,IoU@0.1 0.7365 | R@1,IoU@0.3 0.6450 | R@1,IoU@0.5 0.4813 | R@1,IoU@0.7 0.2191 | R@1,IoU@0.9 0.0291 | R@5,mIoU 0.6814 | R@5,IoU@0.1 0.9902 | R@5,IoU@0.3 0.9668 | R@5,IoU@0.5 0.8588 | R@5,IoU@0.7 0.5171 | R@5,IoU@0.9 0.0700 |
+2022-12-12 23:35:08,386 - Best results have been updated.
+2022-12-12 23:35:08,386 - ============================================================
+2022-12-12 23:35:08,386 - Start Epoch 14
+2022-12-12 23:35:25,797 - Epoch 14, Batch 50, lr = 0.00012, final_loss = 2.4266, nll_loss = 2.3060, ref_nll_loss = 2.5473, ivc_loss = 0.0573, neg_loss_1 = 0.0066, neg_loss_2 = 0.0065, ref_loss = 0.0120, div_loss = 0.0014, 0.348 seconds/batch
+2022-12-12 23:35:43,037 - Epoch 14, Batch 100, lr = 0.00012, final_loss = 2.4337, nll_loss = 2.3168, ref_nll_loss = 2.5505, ivc_loss = 0.0614, neg_loss_1 = 0.0077, neg_loss_2 = 0.0070, ref_loss = 0.0127, div_loss = 0.0013, 0.347 seconds/batch
+2022-12-12 23:36:00,009 - Epoch 14, Batch 150, lr = 0.00012, final_loss = 2.4289, nll_loss = 2.3159, ref_nll_loss = 2.5419, ivc_loss = 0.0626, neg_loss_1 = 0.0078, neg_loss_2 = 0.0066, ref_loss = 0.0132, div_loss = 0.0014, 0.344 seconds/batch
+2022-12-12 23:36:17,398 - Epoch 14, Batch 200, lr = 0.00012, final_loss = 2.4195, nll_loss = 2.3048, ref_nll_loss = 2.5341, ivc_loss = 0.0626, neg_loss_1 = 0.0075, neg_loss_2 = 0.0066, ref_loss = 0.0132, div_loss = 0.0016, 0.345 seconds/batch
+2022-12-12 23:36:34,807 - Epoch 14, Batch 250, lr = 0.00012, final_loss = 2.4573, nll_loss = 2.3406, ref_nll_loss = 2.5740, ivc_loss = 0.0633, neg_loss_1 = 0.0081, neg_loss_2 = 0.0066, ref_loss = 0.0127, div_loss = 0.0017, 0.346 seconds/batch
+2022-12-12 23:36:52,149 - Epoch 14, Batch 300, lr = 0.00012, final_loss = 2.4585, nll_loss = 2.3425, ref_nll_loss = 2.5744, ivc_loss = 0.0627, neg_loss_1 = 0.0074, neg_loss_2 = 0.0073, ref_loss = 0.0128, div_loss = 0.0016, 0.346 seconds/batch
+2022-12-12 23:37:03,133 - Epoch 14, Batch 332, lr = 0.00012, final_loss = 2.4428, nll_loss = 2.3306, ref_nll_loss = 2.5551, ivc_loss = 0.0665, neg_loss_1 = 0.0086, neg_loss_2 = 0.0075, ref_loss = 0.0135, div_loss = 0.0014, 0.346 seconds/batch
+2022-12-12 23:37:03,162 - save model to checkpoints/charades/base\model-14.pt, num_updates 4648.
+2022-12-12 23:37:26,812 - | R@1,mIoU 0.4241 | R@1,IoU@0.1 0.7289 | R@1,IoU@0.3 0.6415 | R@1,IoU@0.5 0.4899 | R@1,IoU@0.7 0.2226 | R@1,IoU@0.9 0.0323 | R@5,mIoU 0.6843 | R@5,IoU@0.1 0.9918 | R@5,IoU@0.3 0.9687 | R@5,IoU@0.5 0.8683 | R@5,IoU@0.7 0.5098 | R@5,IoU@0.9 0.0820 |
+2022-12-12 23:37:26,843 - Best results have been updated.
+2022-12-12 23:37:26,844 - ============================================================
+2022-12-12 23:37:26,844 - Start Epoch 15
+2022-12-12 23:37:43,785 - Epoch 15, Batch 50, lr = 0.00012, final_loss = 2.3977, nll_loss = 2.2847, ref_nll_loss = 2.5107, ivc_loss = 0.0604, neg_loss_1 = 0.0059, neg_loss_2 = 0.0065, ref_loss = 0.0138, div_loss = 0.0016, 0.339 seconds/batch
+2022-12-12 23:38:00,540 - Epoch 15, Batch 100, lr = 0.00012, final_loss = 2.4121, nll_loss = 2.2943, ref_nll_loss = 2.5300, ivc_loss = 0.0575, neg_loss_1 = 0.0073, neg_loss_2 = 0.0059, ref_loss = 0.0122, div_loss = 0.0014, 0.337 seconds/batch
+2022-12-12 23:38:17,339 - Epoch 15, Batch 150, lr = 0.00012, final_loss = 2.4230, nll_loss = 2.3097, ref_nll_loss = 2.5362, ivc_loss = 0.0615, neg_loss_1 = 0.0068, neg_loss_2 = 0.0078, ref_loss = 0.0126, div_loss = 0.0015, 0.337 seconds/batch
+2022-12-12 23:38:34,118 - Epoch 15, Batch 200, lr = 0.00011, final_loss = 2.4299, nll_loss = 2.3115, ref_nll_loss = 2.5483, ivc_loss = 0.0595, neg_loss_1 = 0.0074, neg_loss_2 = 0.0053, ref_loss = 0.0134, div_loss = 0.0014, 0.336 seconds/batch
+2022-12-12 23:38:51,086 - Epoch 15, Batch 250, lr = 0.00011, final_loss = 2.4486, nll_loss = 2.3283, ref_nll_loss = 2.5688, ivc_loss = 0.0623, neg_loss_1 = 0.0070, neg_loss_2 = 0.0075, ref_loss = 0.0129, div_loss = 0.0015, 0.337 seconds/batch
+2022-12-12 23:39:08,486 - Epoch 15, Batch 300, lr = 0.00011, final_loss = 2.4106, nll_loss = 2.2956, ref_nll_loss = 2.5257, ivc_loss = 0.0645, neg_loss_1 = 0.0077, neg_loss_2 = 0.0078, ref_loss = 0.0132, div_loss = 0.0014, 0.339 seconds/batch
+2022-12-12 23:39:19,411 - Epoch 15, Batch 332, lr = 0.00011, final_loss = 2.4294, nll_loss = 2.3120, ref_nll_loss = 2.5467, ivc_loss = 0.0687, neg_loss_1 = 0.0079, neg_loss_2 = 0.0078, ref_loss = 0.0146, div_loss = 0.0016, 0.339 seconds/batch
+2022-12-12 23:39:19,442 - save model to checkpoints/charades/base\model-15.pt, num_updates 4980.
+2022-12-12 23:39:42,908 - | R@1,mIoU 0.4269 | R@1,IoU@0.1 0.7346 | R@1,IoU@0.3 0.6476 | R@1,IoU@0.5 0.4927 | R@1,IoU@0.7 0.2198 | R@1,IoU@0.9 0.0383 | R@5,mIoU 0.6838 | R@5,IoU@0.1 0.9921 | R@5,IoU@0.3 0.9693 | R@5,IoU@0.5 0.8632 | R@5,IoU@0.7 0.5073 | R@5,IoU@0.9 0.0982 |
+2022-12-12 23:39:42,938 - Best results have been updated.
+2022-12-12 23:39:42,938 - ============================================================
+2022-12-12 23:39:42,939 - Start Epoch 16
+2022-12-12 23:39:59,730 - Epoch 16, Batch 50, lr = 0.00011, final_loss = 2.4150, nll_loss = 2.2981, ref_nll_loss = 2.5319, ivc_loss = 0.0591, neg_loss_1 = 0.0066, neg_loss_2 = 0.0063, ref_loss = 0.0126, div_loss = 0.0016, 0.336 seconds/batch
+2022-12-12 23:40:16,710 - Epoch 16, Batch 100, lr = 0.00011, final_loss = 2.3779, nll_loss = 2.2586, ref_nll_loss = 2.4973, ivc_loss = 0.0596, neg_loss_1 = 0.0075, neg_loss_2 = 0.0062, ref_loss = 0.0126, div_loss = 0.0014, 0.338 seconds/batch
+2022-12-12 23:40:34,460 - Epoch 16, Batch 150, lr = 0.00011, final_loss = 2.4148, nll_loss = 2.2974, ref_nll_loss = 2.5322, ivc_loss = 0.0600, neg_loss_1 = 0.0069, neg_loss_2 = 0.0064, ref_loss = 0.0129, div_loss = 0.0015, 0.343 seconds/batch
+2022-12-12 23:40:51,802 - Epoch 16, Batch 200, lr = 0.00011, final_loss = 2.4163, nll_loss = 2.2967, ref_nll_loss = 2.5360, ivc_loss = 0.0638, neg_loss_1 = 0.0076, neg_loss_2 = 0.0064, ref_loss = 0.0135, div_loss = 0.0018, 0.344 seconds/batch
+2022-12-12 23:41:09,108 - Epoch 16, Batch 250, lr = 0.00011, final_loss = 2.4167, nll_loss = 2.2976, ref_nll_loss = 2.5357, ivc_loss = 0.0586, neg_loss_1 = 0.0070, neg_loss_2 = 0.0068, ref_loss = 0.0115, div_loss = 0.0016, 0.345 seconds/batch
+2022-12-12 23:41:26,039 - Epoch 16, Batch 300, lr = 0.00011, final_loss = 2.3997, nll_loss = 2.2822, ref_nll_loss = 2.5172, ivc_loss = 0.0603, neg_loss_1 = 0.0066, neg_loss_2 = 0.0070, ref_loss = 0.0128, div_loss = 0.0015, 0.344 seconds/batch
+2022-12-12 23:41:36,641 - Epoch 16, Batch 332, lr = 0.00011, final_loss = 2.4034, nll_loss = 2.2853, ref_nll_loss = 2.5216, ivc_loss = 0.0634, neg_loss_1 = 0.0071, neg_loss_2 = 0.0067, ref_loss = 0.0137, div_loss = 0.0017, 0.342 seconds/batch
+2022-12-12 23:41:36,671 - save model to checkpoints/charades/base\model-16.pt, num_updates 5312.
+2022-12-12 23:42:00,109 - | R@1,mIoU 0.4276 | R@1,IoU@0.1 0.7334 | R@1,IoU@0.3 0.6441 | R@1,IoU@0.5 0.4826 | R@1,IoU@0.7 0.2280 | R@1,IoU@0.9 0.0374 | R@5,mIoU 0.6862 | R@5,IoU@0.1 0.9889 | R@5,IoU@0.3 0.9649 | R@5,IoU@0.5 0.8642 | R@5,IoU@0.7 0.5203 | R@5,IoU@0.9 0.0833 |
+2022-12-12 23:42:00,135 - Best results have been updated.
+2022-12-12 23:42:00,135 - ============================================================
+2022-12-12 23:42:00,135 - Start Epoch 17
+2022-12-12 23:42:16,859 - Epoch 17, Batch 50, lr = 0.00011, final_loss = 2.3717, nll_loss = 2.2508, ref_nll_loss = 2.4926, ivc_loss = 0.0522, neg_loss_1 = 0.0059, neg_loss_2 = 0.0055, ref_loss = 0.0110, div_loss = 0.0015, 0.334 seconds/batch
+2022-12-12 23:42:34,009 - Epoch 17, Batch 100, lr = 0.00011, final_loss = 2.3877, nll_loss = 2.2715, ref_nll_loss = 2.5039, ivc_loss = 0.0631, neg_loss_1 = 0.0079, neg_loss_2 = 0.0060, ref_loss = 0.0139, div_loss = 0.0015, 0.339 seconds/batch
+2022-12-12 23:42:51,430 - Epoch 17, Batch 150, lr = 0.00011, final_loss = 2.3903, nll_loss = 2.2665, ref_nll_loss = 2.5141, ivc_loss = 0.0514, neg_loss_1 = 0.0057, neg_loss_2 = 0.0060, ref_loss = 0.0099, div_loss = 0.0017, 0.342 seconds/batch
+2022-12-12 23:43:09,050 - Epoch 17, Batch 200, lr = 0.00011, final_loss = 2.3749, nll_loss = 2.2583, ref_nll_loss = 2.4914, ivc_loss = 0.0594, neg_loss_1 = 0.0075, neg_loss_2 = 0.0049, ref_loss = 0.0133, div_loss = 0.0016, 0.345 seconds/batch
+2022-12-12 23:43:26,131 - Epoch 17, Batch 250, lr = 0.00011, final_loss = 2.3940, nll_loss = 2.2764, ref_nll_loss = 2.5116, ivc_loss = 0.0566, neg_loss_1 = 0.0061, neg_loss_2 = 0.0058, ref_loss = 0.0127, div_loss = 0.0015, 0.344 seconds/batch
+2022-12-12 23:43:43,206 - Epoch 17, Batch 300, lr = 0.00011, final_loss = 2.4027, nll_loss = 2.2859, ref_nll_loss = 2.5196, ivc_loss = 0.0585, neg_loss_1 = 0.0064, neg_loss_2 = 0.0058, ref_loss = 0.0136, div_loss = 0.0014, 0.344 seconds/batch
+2022-12-12 23:43:53,931 - Epoch 17, Batch 332, lr = 0.00011, final_loss = 2.3893, nll_loss = 2.2743, ref_nll_loss = 2.5044, ivc_loss = 0.0723, neg_loss_1 = 0.0088, neg_loss_2 = 0.0077, ref_loss = 0.0138, div_loss = 0.0024, 0.343 seconds/batch
+2022-12-12 23:43:53,961 - save model to checkpoints/charades/base\model-17.pt, num_updates 5644.
+2022-12-12 23:44:17,336 - | R@1,mIoU 0.4285 | R@1,IoU@0.1 0.7413 | R@1,IoU@0.3 0.6476 | R@1,IoU@0.5 0.4911 | R@1,IoU@0.7 0.2312 | R@1,IoU@0.9 0.0317 | R@5,mIoU 0.6847 | R@5,IoU@0.1 0.9911 | R@5,IoU@0.3 0.9652 | R@5,IoU@0.5 0.8638 | R@5,IoU@0.7 0.5111 | R@5,IoU@0.9 0.0849 |
+2022-12-12 23:44:17,363 - Best results have been updated.
+2022-12-12 23:44:17,364 - ============================================================

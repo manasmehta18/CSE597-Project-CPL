@@ -1,0 +1,451 @@
+(cpl1) PS C:\Users\manas\Desktop\CS 597\project\cpl> python train.py --config-path config/charades/main.json --log_dir logs
+train: 10602 samples, test: 3158 samples
+CPL(
+  (frame_fc): Linear(in_features=1024, out_features=256, bias=True)
+  (word_fc): Linear(in_features=300, out_features=256, bias=True)
+  (trans): DualTransformer(
+    (decoder1): TransformerDecoder(
+      (decoder_layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (decoder2): TransformerDecoder(
+      (decoder_layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (encoder_attn): MultiheadAttention(
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+          (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+  )
+  (fc_comp): Linear(in_features=256, out_features=1112, bias=True)
+  (fc_gauss): Linear(in_features=256, out_features=16, bias=True)
+  (word_pos_encoder): SinusoidalPositionalEmbedding()
+)
+Total: 5375680 Trainable: 5375680
+Start Epoch 1
+Epoch 1, Batch 50, lr = 0.00005, final_loss = 6.2237, nll_loss = 6.1810, ref_nll_loss = 6.2664, ivc_loss = 0.3896, neg_loss_1 = 0.0467, neg_loss_2 = 0.0455, ref_loss = 0.0394, div_loss = 0.0860, 0.382 seconds/batch
+Epoch 1, Batch 100, lr = 0.00010, final_loss = 4.7259, nll_loss = 4.6934, ref_nll_loss = 4.7583, ivc_loss = 0.2023, neg_loss_1 = 0.0404, neg_loss_2 = 0.0420, ref_loss = 0.0475, div_loss = 0.0241, 0.373 seconds/batch
+Epoch 1, Batch 150, lr = 0.00015, final_loss = 4.0266, nll_loss = 3.9840, ref_nll_loss = 4.0692, ivc_loss = 0.1499, neg_loss_1 = 0.0328, neg_loss_2 = 0.0323, ref_loss = 0.0387, div_loss = 0.0153, 0.367 seconds/batch
+Epoch 1, Batch 200, lr = 0.00020, final_loss = 3.6432, nll_loss = 3.5922, ref_nll_loss = 3.6942, ivc_loss = 0.1285, neg_loss_1 = 0.0315, neg_loss_2 = 0.0300, ref_loss = 0.0316, div_loss = 0.0118, 0.364 seconds/batch
+Epoch 1, Batch 250, lr = 0.00025, final_loss = 3.4441, nll_loss = 3.3895, ref_nll_loss = 3.4988, ivc_loss = 0.1304, neg_loss_1 = 0.0308, neg_loss_2 = 0.0301, ref_loss = 0.0315, div_loss = 0.0127, 0.364 seconds/batch
+Epoch 1, Batch 300, lr = 0.00030, final_loss = 3.3079, nll_loss = 3.2524, ref_nll_loss = 3.3635, ivc_loss = 0.1217, neg_loss_1 = 0.0289, neg_loss_2 = 0.0264, ref_loss = 0.0332, div_loss = 0.0111, 0.363 seconds/batch
+Epoch 1, Batch 332, lr = 0.00033, final_loss = 3.2229, nll_loss = 3.1648, ref_nll_loss = 3.2811, ivc_loss = 0.1209, neg_loss_1 = 0.0290, neg_loss_2 = 0.0289, ref_loss = 0.0304, div_loss = 0.0109, 0.362 seconds/batch
+save model to checkpoints/charades/base\model-1.pt, num_updates 332.
+| R@1,mIoU 0.3337 | R@1,IoU@0.1 0.6241 | R@1,IoU@0.3 0.5079 | R@1,IoU@0.5 0.3534 | R@1,IoU@0.7 0.1596 | R@1,IoU@0.9 0.0244 | R@5,mIoU 0.6338 | R@5,IoU@0.1 0.9788 | R@5,IoU@0.3 0.9307 | R@5,IoU@0.5 0.7682 | R@5,IoU@0.7 0.4180 | R@5,IoU@0.9 0.0826 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 2
+Epoch 2, Batch 50, lr = 0.00038, final_loss = 3.1317, nll_loss = 3.0696, ref_nll_loss = 3.1938, ivc_loss = 0.1081, neg_loss_1 = 0.0255, neg_loss_2 = 0.0252, ref_loss = 0.0319, div_loss = 0.0085, 0.361 seconds/batch
+Epoch 2, Batch 100, lr = 0.00038, final_loss = 3.0605, nll_loss = 2.9945, ref_nll_loss = 3.1264, ivc_loss = 0.1054, neg_loss_1 = 0.0220, neg_loss_2 = 0.0228, ref_loss = 0.0294, div_loss = 0.0104, 0.360 seconds/batch
+Epoch 2, Batch 150, lr = 0.00036, final_loss = 2.9843, nll_loss = 2.9163, ref_nll_loss = 3.0523, ivc_loss = 0.0995, neg_loss_1 = 0.0225, neg_loss_2 = 0.0204, ref_loss = 0.0287, div_loss = 0.0093, 0.361 seconds/batch
+Epoch 2, Batch 200, lr = 0.00035, final_loss = 2.9395, nll_loss = 2.8640, ref_nll_loss = 3.0149, ivc_loss = 0.0816, neg_loss_1 = 0.0160, neg_loss_2 = 0.0158, ref_loss = 0.0270, div_loss = 0.0076, 0.360 seconds/batch
+Epoch 2, Batch 250, lr = 0.00033, final_loss = 2.8974, nll_loss = 2.8222, ref_nll_loss = 2.9727, ivc_loss = 0.0792, neg_loss_1 = 0.0162, neg_loss_2 = 0.0151, ref_loss = 0.0268, div_loss = 0.0070, 0.360 seconds/batch
+Epoch 2, Batch 300, lr = 0.00032, final_loss = 2.8395, nll_loss = 2.7647, ref_nll_loss = 2.9143, ivc_loss = 0.0785, neg_loss_1 = 0.0178, neg_loss_2 = 0.0161, ref_loss = 0.0280, div_loss = 0.0055, 0.359 seconds/batch
+Epoch 2, Batch 332, lr = 0.00031, final_loss = 2.8452, nll_loss = 2.7679, ref_nll_loss = 2.9225, ivc_loss = 0.0760, neg_loss_1 = 0.0185, neg_loss_2 = 0.0131, ref_loss = 0.0283, div_loss = 0.0054, 0.359 seconds/batch
+save model to checkpoints/charades/base\model-2.pt, num_updates 664.
+| R@1,mIoU 0.3958 | R@1,IoU@0.1 0.7096 | R@1,IoU@0.3 0.6102 | R@1,IoU@0.5 0.4427 | R@1,IoU@0.7 0.1947 | R@1,IoU@0.9 0.0285 | R@5,mIoU 0.6689 | R@5,IoU@0.1 0.9899 | R@5,IoU@0.3 0.9645 | R@5,IoU@0.5 0.8284 | R@5,IoU@0.7 0.4921 | R@5,IoU@0.9 0.0804 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 3
+Epoch 3, Batch 50, lr = 0.00030, final_loss = 2.7874, nll_loss = 2.7066, ref_nll_loss = 2.8683, ivc_loss = 0.0721, neg_loss_1 = 0.0155, neg_loss_2 = 0.0139, ref_loss = 0.0257, div_loss = 0.0056, 0.358 seconds/batch
+Epoch 3, Batch 100, lr = 0.00029, final_loss = 2.7579, nll_loss = 2.6783, ref_nll_loss = 2.8375, ivc_loss = 0.0715, neg_loss_1 = 0.0167, neg_loss_2 = 0.0133, ref_loss = 0.0260, div_loss = 0.0051, 0.359 seconds/batch
+Epoch 3, Batch 150, lr = 0.00028, final_loss = 2.7658, nll_loss = 2.6832, ref_nll_loss = 2.8484, ivc_loss = 0.0645, neg_loss_1 = 0.0137, neg_loss_2 = 0.0109, ref_loss = 0.0256, div_loss = 0.0047, 0.358 seconds/batch
+Epoch 3, Batch 200, lr = 0.00027, final_loss = 2.7303, nll_loss = 2.6472, ref_nll_loss = 2.8134, ivc_loss = 0.0683, neg_loss_1 = 0.0146, neg_loss_2 = 0.0149, ref_loss = 0.0244, div_loss = 0.0048, 0.359 seconds/batch
+Epoch 3, Batch 250, lr = 0.00026, final_loss = 2.7084, nll_loss = 2.6260, ref_nll_loss = 2.7908, ivc_loss = 0.0646, neg_loss_1 = 0.0149, neg_loss_2 = 0.0108, ref_loss = 0.0244, div_loss = 0.0048, 0.359 seconds/batch
+Epoch 3, Batch 300, lr = 0.00026, final_loss = 2.6780, nll_loss = 2.5910, ref_nll_loss = 2.7650, ivc_loss = 0.0606, neg_loss_1 = 0.0137, neg_loss_2 = 0.0115, ref_loss = 0.0223, div_loss = 0.0043, 0.359 seconds/batch
+Epoch 3, Batch 332, lr = 0.00025, final_loss = 2.6809, nll_loss = 2.5908, ref_nll_loss = 2.7709, ivc_loss = 0.0660, neg_loss_1 = 0.0146, neg_loss_2 = 0.0148, ref_loss = 0.0229, div_loss = 0.0046, 0.358 seconds/batch
+save model to checkpoints/charades/base\model-3.pt, num_updates 996.
+| R@1,mIoU 0.4019 | R@1,IoU@0.1 0.7175 | R@1,IoU@0.3 0.6181 | R@1,IoU@0.5 0.4459 | R@1,IoU@0.7 0.1951 | R@1,IoU@0.9 0.0323 | R@5,mIoU 0.6690 | R@5,IoU@0.1 0.9927 | R@5,IoU@0.3 0.9693 | R@5,IoU@0.5 0.8287 | R@5,IoU@0.7 0.4867 | R@5,IoU@0.9 0.0861 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 4
+Epoch 4, Batch 50, lr = 0.00025, final_loss = 2.6509, nll_loss = 2.5639, ref_nll_loss = 2.7379, ivc_loss = 0.0649, neg_loss_1 = 0.0154, neg_loss_2 = 0.0126, ref_loss = 0.0231, div_loss = 0.0046, 0.360 seconds/batch
+Epoch 4, Batch 100, lr = 0.00024, final_loss = 2.6445, nll_loss = 2.5561, ref_nll_loss = 2.7329, ivc_loss = 0.0613, neg_loss_1 = 0.0135, neg_loss_2 = 0.0115, ref_loss = 0.0219, div_loss = 0.0048, 0.360 seconds/batch
+Epoch 4, Batch 150, lr = 0.00024, final_loss = 2.6580, nll_loss = 2.5656, ref_nll_loss = 2.7505, ivc_loss = 0.0589, neg_loss_1 = 0.0120, neg_loss_2 = 0.0130, ref_loss = 0.0215, div_loss = 0.0041, 0.361 seconds/batch
+Epoch 4, Batch 200, lr = 0.00023, final_loss = 2.6315, nll_loss = 2.5433, ref_nll_loss = 2.7196, ivc_loss = 0.0593, neg_loss_1 = 0.0132, neg_loss_2 = 0.0117, ref_loss = 0.0216, div_loss = 0.0043, 0.360 seconds/batch
+Epoch 4, Batch 250, lr = 0.00023, final_loss = 2.6297, nll_loss = 2.5365, ref_nll_loss = 2.7230, ivc_loss = 0.0600, neg_loss_1 = 0.0121, neg_loss_2 = 0.0113, ref_loss = 0.0221, div_loss = 0.0049, 0.359 seconds/batch
+Epoch 4, Batch 300, lr = 0.00022, final_loss = 2.6297, nll_loss = 2.5384, ref_nll_loss = 2.7210, ivc_loss = 0.0653, neg_loss_1 = 0.0132, neg_loss_2 = 0.0122, ref_loss = 0.0241, div_loss = 0.0053, 0.359 seconds/batch
+Epoch 4, Batch 332, lr = 0.00022, final_loss = 2.5687, nll_loss = 2.4796, ref_nll_loss = 2.6578, ivc_loss = 0.0577, neg_loss_1 = 0.0125, neg_loss_2 = 0.0111, ref_loss = 0.0209, div_loss = 0.0044, 0.358 seconds/batch
+save model to checkpoints/charades/base\model-4.pt, num_updates 1328.
+| R@1,mIoU 0.4114 | R@1,IoU@0.1 0.7179 | R@1,IoU@0.3 0.6273 | R@1,IoU@0.5 0.4582 | R@1,IoU@0.7 0.2141 | R@1,IoU@0.9 0.0336 | R@5,mIoU 0.6718 | R@5,IoU@0.1 0.9899 | R@5,IoU@0.3 0.9630 | R@5,IoU@0.5 0.8306 | R@5,IoU@0.7 0.4899 | R@5,IoU@0.9 0.0928 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 5
+Epoch 5, Batch 50, lr = 0.00022, final_loss = 2.5729, nll_loss = 2.4807, ref_nll_loss = 2.6652, ivc_loss = 0.0575, neg_loss_1 = 0.0121, neg_loss_2 = 0.0097, ref_loss = 0.0229, div_loss = 0.0043, 0.360 seconds/batch
+Epoch 5, Batch 100, lr = 0.00021, final_loss = 2.5763, nll_loss = 2.4853, ref_nll_loss = 2.6674, ivc_loss = 0.0528, neg_loss_1 = 0.0122, neg_loss_2 = 0.0088, ref_loss = 0.0207, div_loss = 0.0037, 0.360 seconds/batch
+Epoch 5, Batch 150, lr = 0.00021, final_loss = 2.5685, nll_loss = 2.4753, ref_nll_loss = 2.6618, ivc_loss = 0.0554, neg_loss_1 = 0.0120, neg_loss_2 = 0.0106, ref_loss = 0.0214, div_loss = 0.0038, 0.360 seconds/batch
+Epoch 5, Batch 200, lr = 0.00020, final_loss = 2.5504, nll_loss = 2.4600, ref_nll_loss = 2.6409, ivc_loss = 0.0558, neg_loss_1 = 0.0109, neg_loss_2 = 0.0093, ref_loss = 0.0230, div_loss = 0.0042, 0.359 seconds/batch
+Epoch 5, Batch 250, lr = 0.00020, final_loss = 2.6055, nll_loss = 2.5098, ref_nll_loss = 2.7012, ivc_loss = 0.0584, neg_loss_1 = 0.0106, neg_loss_2 = 0.0113, ref_loss = 0.0231, div_loss = 0.0045, 0.359 seconds/batch
+Epoch 5, Batch 300, lr = 0.00020, final_loss = 2.5593, nll_loss = 2.4640, ref_nll_loss = 2.6547, ivc_loss = 0.0541, neg_loss_1 = 0.0106, neg_loss_2 = 0.0114, ref_loss = 0.0198, div_loss = 0.0041, 0.360 seconds/batch
+Epoch 5, Batch 332, lr = 0.00020, final_loss = 2.5743, nll_loss = 2.4788, ref_nll_loss = 2.6699, ivc_loss = 0.0519, neg_loss_1 = 0.0106, neg_loss_2 = 0.0098, ref_loss = 0.0207, div_loss = 0.0036, 0.359 seconds/batch
+save model to checkpoints/charades/base\model-5.pt, num_updates 1660.
+| R@1,mIoU 0.4261 | R@1,IoU@0.1 0.7460 | R@1,IoU@0.3 0.6555 | R@1,IoU@0.5 0.4740 | R@1,IoU@0.7 0.2198 | R@1,IoU@0.9 0.0361 | R@5,mIoU 0.6749 | R@5,IoU@0.1 0.9899 | R@5,IoU@0.3 0.9699 | R@5,IoU@0.5 0.8328 | R@5,IoU@0.7 0.5035 | R@5,IoU@0.9 0.0921 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 6
+Epoch 6, Batch 50, lr = 0.00019, final_loss = 2.5661, nll_loss = 2.4706, ref_nll_loss = 2.6616, ivc_loss = 0.0554, neg_loss_1 = 0.0123, neg_loss_2 = 0.0101, ref_loss = 0.0210, div_loss = 0.0040, 0.358 seconds/batch
+Epoch 6, Batch 100, lr = 0.00019, final_loss = 2.5122, nll_loss = 2.4180, ref_nll_loss = 2.6064, ivc_loss = 0.0496, neg_loss_1 = 0.0103, neg_loss_2 = 0.0075, ref_loss = 0.0205, div_loss = 0.0038, 0.357 seconds/batch
+Epoch 6, Batch 150, lr = 0.00019, final_loss = 2.5011, nll_loss = 2.4052, ref_nll_loss = 2.5971, ivc_loss = 0.0501, neg_loss_1 = 0.0101, neg_loss_2 = 0.0076, ref_loss = 0.0217, div_loss = 0.0036, 0.358 seconds/batch
+Epoch 6, Batch 200, lr = 0.00019, final_loss = 2.5243, nll_loss = 2.4307, ref_nll_loss = 2.6180, ivc_loss = 0.0560, neg_loss_1 = 0.0126, neg_loss_2 = 0.0106, ref_loss = 0.0219, div_loss = 0.0036, 0.358 seconds/batch
+Epoch 6, Batch 250, lr = 0.00018, final_loss = 2.4983, nll_loss = 2.4033, ref_nll_loss = 2.5934, ivc_loss = 0.0501, neg_loss_1 = 0.0102, neg_loss_2 = 0.0090, ref_loss = 0.0205, div_loss = 0.0035, 0.359 seconds/batch
+Epoch 6, Batch 300, lr = 0.00018, final_loss = 2.5558, nll_loss = 2.4559, ref_nll_loss = 2.6557, ivc_loss = 0.0475, neg_loss_1 = 0.0093, neg_loss_2 = 0.0073, ref_loss = 0.0194, div_loss = 0.0038, 0.355 seconds/batch
+Epoch 6, Batch 332, lr = 0.00018, final_loss = 2.5174, nll_loss = 2.4196, ref_nll_loss = 2.6153, ivc_loss = 0.0506, neg_loss_1 = 0.0100, neg_loss_2 = 0.0102, ref_loss = 0.0189, div_loss = 0.0038, 0.352 seconds/batch
+save model to checkpoints/charades/base\model-6.pt, num_updates 1992.
+| R@1,mIoU 0.4302 | R@1,IoU@0.1 0.7540 | R@1,IoU@0.3 0.6567 | R@1,IoU@0.5 0.4911 | R@1,IoU@0.7 0.2198 | R@1,IoU@0.9 0.0355 | R@5,mIoU 0.6756 | R@5,IoU@0.1 0.9927 | R@5,IoU@0.3 0.9740 | R@5,IoU@0.5 0.8382 | R@5,IoU@0.7 0.5032 | R@5,IoU@0.9 0.0918 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 7
+Epoch 7, Batch 50, lr = 0.00018, final_loss = 2.4721, nll_loss = 2.3749, ref_nll_loss = 2.5693, ivc_loss = 0.0455, neg_loss_1 = 0.0086, neg_loss_2 = 0.0072, ref_loss = 0.0187, div_loss = 0.0036, 0.335 seconds/batch
+Epoch 7, Batch 100, lr = 0.00017, final_loss = 2.4976, nll_loss = 2.3965, ref_nll_loss = 2.5986, ivc_loss = 0.0456, neg_loss_1 = 0.0097, neg_loss_2 = 0.0065, ref_loss = 0.0187, div_loss = 0.0036, 0.336 seconds/batch
+Epoch 7, Batch 150, lr = 0.00017, final_loss = 2.4969, nll_loss = 2.3968, ref_nll_loss = 2.5970, ivc_loss = 0.0466, neg_loss_1 = 0.0087, neg_loss_2 = 0.0091, ref_loss = 0.0191, div_loss = 0.0033, 0.335 seconds/batch
+Epoch 7, Batch 200, lr = 0.00017, final_loss = 2.4775, nll_loss = 2.3770, ref_nll_loss = 2.5780, ivc_loss = 0.0456, neg_loss_1 = 0.0088, neg_loss_2 = 0.0071, ref_loss = 0.0198, div_loss = 0.0033, 0.335 seconds/batch
+Epoch 7, Batch 250, lr = 0.00017, final_loss = 2.5080, nll_loss = 2.4040, ref_nll_loss = 2.6120, ivc_loss = 0.0485, neg_loss_1 = 0.0084, neg_loss_2 = 0.0094, ref_loss = 0.0173, div_loss = 0.0045, 0.335 seconds/batch
+Epoch 7, Batch 300, lr = 0.00017, final_loss = 2.4750, nll_loss = 2.3765, ref_nll_loss = 2.5736, ivc_loss = 0.0499, neg_loss_1 = 0.0085, neg_loss_2 = 0.0094, ref_loss = 0.0218, div_loss = 0.0034, 0.336 seconds/batch
+Epoch 7, Batch 332, lr = 0.00017, final_loss = 2.4732, nll_loss = 2.3759, ref_nll_loss = 2.5704, ivc_loss = 0.0556, neg_loss_1 = 0.0110, neg_loss_2 = 0.0105, ref_loss = 0.0230, div_loss = 0.0037, 0.335 seconds/batch
+save model to checkpoints/charades/base\model-7.pt, num_updates 2324.
+| R@1,mIoU 0.4255 | R@1,IoU@0.1 0.7514 | R@1,IoU@0.3 0.6548 | R@1,IoU@0.5 0.4747 | R@1,IoU@0.7 0.2182 | R@1,IoU@0.9 0.0367 | R@5,mIoU 0.6761 | R@5,IoU@0.1 0.9924 | R@5,IoU@0.3 0.9709 | R@5,IoU@0.5 0.8423 | R@5,IoU@0.7 0.5076 | R@5,IoU@0.9 0.0953 |
+============================================================
+Start Epoch 8
+Epoch 8, Batch 50, lr = 0.00016, final_loss = 2.4524, nll_loss = 2.3549, ref_nll_loss = 2.5500, ivc_loss = 0.0470, neg_loss_1 = 0.0077, neg_loss_2 = 0.0071, ref_loss = 0.0196, div_loss = 0.0042, 0.332 seconds/batch
+Epoch 8, Batch 100, lr = 0.00016, final_loss = 2.4590, nll_loss = 2.3585, ref_nll_loss = 2.5596, ivc_loss = 0.0459, neg_loss_1 = 0.0085, neg_loss_2 = 0.0084, ref_loss = 0.0187, div_loss = 0.0034, 0.332 seconds/batch
+Epoch 8, Batch 150, lr = 0.00016, final_loss = 2.4569, nll_loss = 2.3523, ref_nll_loss = 2.5615, ivc_loss = 0.0452, neg_loss_1 = 0.0069, neg_loss_2 = 0.0078, ref_loss = 0.0191, div_loss = 0.0038, 0.331 seconds/batch
+Epoch 8, Batch 200, lr = 0.00016, final_loss = 2.4637, nll_loss = 2.3612, ref_nll_loss = 2.5661, ivc_loss = 0.0415, neg_loss_1 = 0.0080, neg_loss_2 = 0.0069, ref_loss = 0.0171, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 8, Batch 250, lr = 0.00016, final_loss = 2.4467, nll_loss = 2.3401, ref_nll_loss = 2.5533, ivc_loss = 0.0426, neg_loss_1 = 0.0060, neg_loss_2 = 0.0069, ref_loss = 0.0187, div_loss = 0.0037, 0.331 seconds/batch
+Epoch 8, Batch 300, lr = 0.00016, final_loss = 2.4382, nll_loss = 2.3342, ref_nll_loss = 2.5423, ivc_loss = 0.0425, neg_loss_1 = 0.0063, neg_loss_2 = 0.0078, ref_loss = 0.0179, div_loss = 0.0035, 0.331 seconds/batch
+Epoch 8, Batch 332, lr = 0.00016, final_loss = 2.4749, nll_loss = 2.3729, ref_nll_loss = 2.5770, ivc_loss = 0.0426, neg_loss_1 = 0.0076, neg_loss_2 = 0.0076, ref_loss = 0.0180, div_loss = 0.0032, 0.331 seconds/batch
+save model to checkpoints/charades/base\model-8.pt, num_updates 2656.
+| R@1,mIoU 0.4231 | R@1,IoU@0.1 0.7432 | R@1,IoU@0.3 0.6491 | R@1,IoU@0.5 0.4788 | R@1,IoU@0.7 0.2144 | R@1,IoU@0.9 0.0380 | R@5,mIoU 0.6709 | R@5,IoU@0.1 0.9886 | R@5,IoU@0.3 0.9668 | R@5,IoU@0.5 0.8252 | R@5,IoU@0.7 0.4987 | R@5,IoU@0.9 0.0944 |
+============================================================
+Start Epoch 9
+Epoch 9, Batch 50, lr = 0.00015, final_loss = 2.3945, nll_loss = 2.2885, ref_nll_loss = 2.5006, ivc_loss = 0.0438, neg_loss_1 = 0.0087, neg_loss_2 = 0.0062, ref_loss = 0.0180, div_loss = 0.0037, 0.333 seconds/batch
+Epoch 9, Batch 100, lr = 0.00015, final_loss = 2.4141, nll_loss = 2.3123, ref_nll_loss = 2.5158, ivc_loss = 0.0442, neg_loss_1 = 0.0070, neg_loss_2 = 0.0067, ref_loss = 0.0200, div_loss = 0.0035, 0.336 seconds/batch
+Epoch 9, Batch 150, lr = 0.00015, final_loss = 2.4430, nll_loss = 2.3405, ref_nll_loss = 2.5455, ivc_loss = 0.0436, neg_loss_1 = 0.0081, neg_loss_2 = 0.0070, ref_loss = 0.0186, div_loss = 0.0033, 0.335 seconds/batch
+Epoch 9, Batch 200, lr = 0.00015, final_loss = 2.4470, nll_loss = 2.3442, ref_nll_loss = 2.5499, ivc_loss = 0.0440, neg_loss_1 = 0.0077, neg_loss_2 = 0.0073, ref_loss = 0.0190, div_loss = 0.0034, 0.335 seconds/batch
+Epoch 9, Batch 250, lr = 0.00015, final_loss = 2.4176, nll_loss = 2.3117, ref_nll_loss = 2.5235, ivc_loss = 0.0460, neg_loss_1 = 0.0071, neg_loss_2 = 0.0084, ref_loss = 0.0200, div_loss = 0.0035, 0.334 seconds/batch
+Epoch 9, Batch 300, lr = 0.00015, final_loss = 2.4211, nll_loss = 2.3157, ref_nll_loss = 2.5264, ivc_loss = 0.0468, neg_loss_1 = 0.0075, neg_loss_2 = 0.0073, ref_loss = 0.0188, div_loss = 0.0044, 0.334 seconds/batch
+Epoch 9, Batch 332, lr = 0.00015, final_loss = 2.4191, nll_loss = 2.3092, ref_nll_loss = 2.5289, ivc_loss = 0.0394, neg_loss_1 = 0.0071, neg_loss_2 = 0.0071, ref_loss = 0.0155, div_loss = 0.0033, 0.334 seconds/batch
+save model to checkpoints/charades/base\model-9.pt, num_updates 2988.
+| R@1,mIoU 0.4329 | R@1,IoU@0.1 0.7578 | R@1,IoU@0.3 0.6669 | R@1,IoU@0.5 0.4813 | R@1,IoU@0.7 0.2213 | R@1,IoU@0.9 0.0399 | R@5,mIoU 0.6729 | R@5,IoU@0.1 0.9937 | R@5,IoU@0.3 0.9718 | R@5,IoU@0.5 0.8300 | R@5,IoU@0.7 0.5003 | R@5,IoU@0.9 0.0956 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 10
+Epoch 10, Batch 50, lr = 0.00015, final_loss = 2.3798, nll_loss = 2.2748, ref_nll_loss = 2.4848, ivc_loss = 0.0417, neg_loss_1 = 0.0076, neg_loss_2 = 0.0064, ref_loss = 0.0169, div_loss = 0.0036, 0.333 seconds/batch
+Epoch 10, Batch 100, lr = 0.00014, final_loss = 2.4040, nll_loss = 2.2997, ref_nll_loss = 2.5082, ivc_loss = 0.0391, neg_loss_1 = 0.0059, neg_loss_2 = 0.0070, ref_loss = 0.0170, div_loss = 0.0031, 0.332 seconds/batch
+Epoch 10, Batch 150, lr = 0.00014, final_loss = 2.3945, nll_loss = 2.2883, ref_nll_loss = 2.5006, ivc_loss = 0.0401, neg_loss_1 = 0.0067, neg_loss_2 = 0.0067, ref_loss = 0.0172, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 10, Batch 200, lr = 0.00014, final_loss = 2.3745, nll_loss = 2.2657, ref_nll_loss = 2.4834, ivc_loss = 0.0393, neg_loss_1 = 0.0053, neg_loss_2 = 0.0070, ref_loss = 0.0166, div_loss = 0.0035, 0.331 seconds/batch
+Epoch 10, Batch 250, lr = 0.00014, final_loss = 2.3985, nll_loss = 2.2943, ref_nll_loss = 2.5028, ivc_loss = 0.0417, neg_loss_1 = 0.0073, neg_loss_2 = 0.0062, ref_loss = 0.0185, div_loss = 0.0033, 0.331 seconds/batch
+Epoch 10, Batch 300, lr = 0.00014, final_loss = 2.4003, nll_loss = 2.2949, ref_nll_loss = 2.5057, ivc_loss = 0.0388, neg_loss_1 = 0.0050, neg_loss_2 = 0.0060, ref_loss = 0.0183, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 10, Batch 332, lr = 0.00014, final_loss = 2.3982, nll_loss = 2.2888, ref_nll_loss = 2.5075, ivc_loss = 0.0384, neg_loss_1 = 0.0060, neg_loss_2 = 0.0058, ref_loss = 0.0172, div_loss = 0.0031, 0.331 seconds/batch
+save model to checkpoints/charades/base\model-10.pt, num_updates 3320.
+| R@1,mIoU 0.4223 | R@1,IoU@0.1 0.7419 | R@1,IoU@0.3 0.6498 | R@1,IoU@0.5 0.4756 | R@1,IoU@0.7 0.2112 | R@1,IoU@0.9 0.0355 | R@5,mIoU 0.6660 | R@5,IoU@0.1 0.9892 | R@5,IoU@0.3 0.9658 | R@5,IoU@0.5 0.8230 | R@5,IoU@0.7 0.4880 | R@5,IoU@0.9 0.0874 |
+============================================================
+Start Epoch 11
+Epoch 11, Batch 50, lr = 0.00014, final_loss = 2.3715, nll_loss = 2.2670, ref_nll_loss = 2.4760, ivc_loss = 0.0414, neg_loss_1 = 0.0076, neg_loss_2 = 0.0051, ref_loss = 0.0193, div_loss = 0.0031, 0.338 seconds/batch
+Epoch 11, Batch 100, lr = 0.00014, final_loss = 2.3829, nll_loss = 2.2776, ref_nll_loss = 2.4883, ivc_loss = 0.0372, neg_loss_1 = 0.0059, neg_loss_2 = 0.0058, ref_loss = 0.0165, div_loss = 0.0030, 0.336 seconds/batch
+Epoch 11, Batch 150, lr = 0.00014, final_loss = 2.3584, nll_loss = 2.2501, ref_nll_loss = 2.4668, ivc_loss = 0.0378, neg_loss_1 = 0.0055, neg_loss_2 = 0.0057, ref_loss = 0.0175, div_loss = 0.0031, 0.335 seconds/batch
+Epoch 11, Batch 200, lr = 0.00013, final_loss = 2.3667, nll_loss = 2.2590, ref_nll_loss = 2.4744, ivc_loss = 0.0415, neg_loss_1 = 0.0049, neg_loss_2 = 0.0073, ref_loss = 0.0178, div_loss = 0.0038, 0.335 seconds/batch
+Epoch 11, Batch 250, lr = 0.00013, final_loss = 2.3646, nll_loss = 2.2557, ref_nll_loss = 2.4735, ivc_loss = 0.0420, neg_loss_1 = 0.0046, neg_loss_2 = 0.0077, ref_loss = 0.0193, div_loss = 0.0035, 0.335 seconds/batch
+Epoch 11, Batch 300, lr = 0.00013, final_loss = 2.3731, nll_loss = 2.2668, ref_nll_loss = 2.4794, ivc_loss = 0.0383, neg_loss_1 = 0.0055, neg_loss_2 = 0.0060, ref_loss = 0.0171, div_loss = 0.0032, 0.336 seconds/batch
+Epoch 11, Batch 332, lr = 0.00013, final_loss = 2.3628, nll_loss = 2.2547, ref_nll_loss = 2.4710, ivc_loss = 0.0411, neg_loss_1 = 0.0058, neg_loss_2 = 0.0063, ref_loss = 0.0172, div_loss = 0.0039, 0.336 seconds/batch
+save model to checkpoints/charades/base\model-11.pt, num_updates 3652.
+| R@1,mIoU 0.4301 | R@1,IoU@0.1 0.7521 | R@1,IoU@0.3 0.6618 | R@1,IoU@0.5 0.4858 | R@1,IoU@0.7 0.2128 | R@1,IoU@0.9 0.0374 | R@5,mIoU 0.6676 | R@5,IoU@0.1 0.9854 | R@5,IoU@0.3 0.9595 | R@5,IoU@0.5 0.8233 | R@5,IoU@0.7 0.4956 | R@5,IoU@0.9 0.0956 |
+============================================================
+Start Epoch 12
+Epoch 12, Batch 50, lr = 0.00013, final_loss = 2.3194, nll_loss = 2.2135, ref_nll_loss = 2.4254, ivc_loss = 0.0373, neg_loss_1 = 0.0051, neg_loss_2 = 0.0054, ref_loss = 0.0171, div_loss = 0.0033, 0.332 seconds/batch
+Epoch 12, Batch 100, lr = 0.00013, final_loss = 2.3733, nll_loss = 2.2676, ref_nll_loss = 2.4790, ivc_loss = 0.0393, neg_loss_1 = 0.0058, neg_loss_2 = 0.0058, ref_loss = 0.0175, div_loss = 0.0034, 0.331 seconds/batch
+Epoch 12, Batch 150, lr = 0.00013, final_loss = 2.3546, nll_loss = 2.2452, ref_nll_loss = 2.4641, ivc_loss = 0.0379, neg_loss_1 = 0.0050, neg_loss_2 = 0.0057, ref_loss = 0.0175, div_loss = 0.0032, 0.332 seconds/batch
+Epoch 12, Batch 200, lr = 0.00013, final_loss = 2.3412, nll_loss = 2.2301, ref_nll_loss = 2.4523, ivc_loss = 0.0376, neg_loss_1 = 0.0041, neg_loss_2 = 0.0067, ref_loss = 0.0165, div_loss = 0.0035, 0.333 seconds/batch
+Epoch 12, Batch 250, lr = 0.00013, final_loss = 2.3291, nll_loss = 2.2216, ref_nll_loss = 2.4366, ivc_loss = 0.0366, neg_loss_1 = 0.0041, neg_loss_2 = 0.0075, ref_loss = 0.0153, div_loss = 0.0033, 0.334 seconds/batch
+Epoch 12, Batch 300, lr = 0.00013, final_loss = 2.3561, nll_loss = 2.2476, ref_nll_loss = 2.4646, ivc_loss = 0.0373, neg_loss_1 = 0.0048, neg_loss_2 = 0.0056, ref_loss = 0.0169, div_loss = 0.0034, 0.334 seconds/batch
+Epoch 12, Batch 332, lr = 0.00013, final_loss = 2.3337, nll_loss = 2.2234, ref_nll_loss = 2.4440, ivc_loss = 0.0405, neg_loss_1 = 0.0046, neg_loss_2 = 0.0079, ref_loss = 0.0180, div_loss = 0.0033, 0.333 seconds/batch
+save model to checkpoints/charades/base\model-12.pt, num_updates 3984.
+| R@1,mIoU 0.4309 | R@1,IoU@0.1 0.7562 | R@1,IoU@0.3 0.6612 | R@1,IoU@0.5 0.4829 | R@1,IoU@0.7 0.2226 | R@1,IoU@0.9 0.0304 | R@5,mIoU 0.6696 | R@5,IoU@0.1 0.9877 | R@5,IoU@0.3 0.9642 | R@5,IoU@0.5 0.8306 | R@5,IoU@0.7 0.5035 | R@5,IoU@0.9 0.0779 |
+============================================================
+Start Epoch 13
+Epoch 13, Batch 50, lr = 0.00013, final_loss = 2.3209, nll_loss = 2.2135, ref_nll_loss = 2.4282, ivc_loss = 0.0383, neg_loss_1 = 0.0045, neg_loss_2 = 0.0063, ref_loss = 0.0179, div_loss = 0.0032, 0.338 seconds/batch
+Epoch 13, Batch 100, lr = 0.00013, final_loss = 2.2951, nll_loss = 2.1861, ref_nll_loss = 2.4042, ivc_loss = 0.0352, neg_loss_1 = 0.0037, neg_loss_2 = 0.0051, ref_loss = 0.0171, div_loss = 0.0031, 0.337 seconds/batch
+Epoch 13, Batch 150, lr = 0.00012, final_loss = 2.3281, nll_loss = 2.2197, ref_nll_loss = 2.4365, ivc_loss = 0.0365, neg_loss_1 = 0.0041, neg_loss_2 = 0.0051, ref_loss = 0.0177, div_loss = 0.0032, 0.335 seconds/batch
+Epoch 13, Batch 200, lr = 0.00012, final_loss = 2.3104, nll_loss = 2.1999, ref_nll_loss = 2.4210, ivc_loss = 0.0361, neg_loss_1 = 0.0043, neg_loss_2 = 0.0062, ref_loss = 0.0158, div_loss = 0.0033, 0.335 seconds/batch
+Epoch 13, Batch 250, lr = 0.00012, final_loss = 2.3145, nll_loss = 2.2038, ref_nll_loss = 2.4251, ivc_loss = 0.0357, neg_loss_1 = 0.0042, neg_loss_2 = 0.0069, ref_loss = 0.0147, div_loss = 0.0033, 0.334 seconds/batch
+Epoch 13, Batch 300, lr = 0.00012, final_loss = 2.3461, nll_loss = 2.2324, ref_nll_loss = 2.4597, ivc_loss = 0.0370, neg_loss_1 = 0.0043, neg_loss_2 = 0.0056, ref_loss = 0.0175, div_loss = 0.0032, 0.334 seconds/batch
+Epoch 13, Batch 332, lr = 0.00012, final_loss = 2.3375, nll_loss = 2.2263, ref_nll_loss = 2.4487, ivc_loss = 0.0365, neg_loss_1 = 0.0024, neg_loss_2 = 0.0045, ref_loss = 0.0186, div_loss = 0.0037, 0.333 seconds/batch
+save model to checkpoints/charades/base\model-13.pt, num_updates 4316.
+| R@1,mIoU 0.4333 | R@1,IoU@0.1 0.7546 | R@1,IoU@0.3 0.6650 | R@1,IoU@0.5 0.4886 | R@1,IoU@0.7 0.2220 | R@1,IoU@0.9 0.0339 | R@5,mIoU 0.6706 | R@5,IoU@0.1 0.9877 | R@5,IoU@0.3 0.9658 | R@5,IoU@0.5 0.8281 | R@5,IoU@0.7 0.4946 | R@5,IoU@0.9 0.0852 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 14
+Epoch 14, Batch 50, lr = 0.00012, final_loss = 2.2857, nll_loss = 2.1715, ref_nll_loss = 2.3998, ivc_loss = 0.0348, neg_loss_1 = 0.0035, neg_loss_2 = 0.0047, ref_loss = 0.0168, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 14, Batch 100, lr = 0.00012, final_loss = 2.3005, nll_loss = 2.1896, ref_nll_loss = 2.4113, ivc_loss = 0.0377, neg_loss_1 = 0.0039, neg_loss_2 = 0.0055, ref_loss = 0.0176, div_loss = 0.0036, 0.330 seconds/batch
+Epoch 14, Batch 150, lr = 0.00012, final_loss = 2.2957, nll_loss = 2.1849, ref_nll_loss = 2.4065, ivc_loss = 0.0330, neg_loss_1 = 0.0034, neg_loss_2 = 0.0044, ref_loss = 0.0148, div_loss = 0.0035, 0.330 seconds/batch
+Epoch 14, Batch 200, lr = 0.00012, final_loss = 2.2813, nll_loss = 2.1717, ref_nll_loss = 2.3909, ivc_loss = 0.0340, neg_loss_1 = 0.0038, neg_loss_2 = 0.0045, ref_loss = 0.0161, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 14, Batch 250, lr = 0.00012, final_loss = 2.3284, nll_loss = 2.2141, ref_nll_loss = 2.4427, ivc_loss = 0.0347, neg_loss_1 = 0.0030, neg_loss_2 = 0.0062, ref_loss = 0.0159, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 14, Batch 300, lr = 0.00012, final_loss = 2.3249, nll_loss = 2.2129, ref_nll_loss = 2.4368, ivc_loss = 0.0351, neg_loss_1 = 0.0029, neg_loss_2 = 0.0061, ref_loss = 0.0158, div_loss = 0.0034, 0.332 seconds/batch
+Epoch 14, Batch 332, lr = 0.00012, final_loss = 2.3063, nll_loss = 2.1987, ref_nll_loss = 2.4139, ivc_loss = 0.0354, neg_loss_1 = 0.0035, neg_loss_2 = 0.0039, ref_loss = 0.0180, div_loss = 0.0033, 0.331 seconds/batch
+save model to checkpoints/charades/base\model-14.pt, num_updates 4648.
+| R@1,mIoU 0.4239 | R@1,IoU@0.1 0.7467 | R@1,IoU@0.3 0.6504 | R@1,IoU@0.5 0.4737 | R@1,IoU@0.7 0.2065 | R@1,IoU@0.9 0.0367 | R@5,mIoU 0.6699 | R@5,IoU@0.1 0.9864 | R@5,IoU@0.3 0.9626 | R@5,IoU@0.5 0.8271 | R@5,IoU@0.7 0.4940 | R@5,IoU@0.9 0.0883 |
+============================================================
+Start Epoch 15
+Epoch 15, Batch 50, lr = 0.00012, final_loss = 2.2567, nll_loss = 2.1498, ref_nll_loss = 2.3636, ivc_loss = 0.0339, neg_loss_1 = 0.0037, neg_loss_2 = 0.0050, ref_loss = 0.0157, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 15, Batch 100, lr = 0.00012, final_loss = 2.2724, nll_loss = 2.1653, ref_nll_loss = 2.3795, ivc_loss = 0.0354, neg_loss_1 = 0.0033, neg_loss_2 = 0.0056, ref_loss = 0.0169, div_loss = 0.0032, 0.332 seconds/batch
+Epoch 15, Batch 150, lr = 0.00012, final_loss = 2.2745, nll_loss = 2.1651, ref_nll_loss = 2.3839, ivc_loss = 0.0351, neg_loss_1 = 0.0033, neg_loss_2 = 0.0048, ref_loss = 0.0173, div_loss = 0.0032, 0.332 seconds/batch
+Epoch 15, Batch 200, lr = 0.00011, final_loss = 2.2929, nll_loss = 2.1842, ref_nll_loss = 2.4016, ivc_loss = 0.0384, neg_loss_1 = 0.0041, neg_loss_2 = 0.0052, ref_loss = 0.0187, div_loss = 0.0035, 0.331 seconds/batch
+Epoch 15, Batch 250, lr = 0.00011, final_loss = 2.3100, nll_loss = 2.2001, ref_nll_loss = 2.4200, ivc_loss = 0.0386, neg_loss_1 = 0.0033, neg_loss_2 = 0.0071, ref_loss = 0.0178, div_loss = 0.0035, 0.331 seconds/batch
+Epoch 15, Batch 300, lr = 0.00011, final_loss = 2.2794, nll_loss = 2.1688, ref_nll_loss = 2.3900, ivc_loss = 0.0375, neg_loss_1 = 0.0032, neg_loss_2 = 0.0067, ref_loss = 0.0180, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 15, Batch 332, lr = 0.00011, final_loss = 2.2970, nll_loss = 2.1849, ref_nll_loss = 2.4090, ivc_loss = 0.0359, neg_loss_1 = 0.0030, neg_loss_2 = 0.0053, ref_loss = 0.0183, div_loss = 0.0031, 0.331 seconds/batch
+save model to checkpoints/charades/base\model-15.pt, num_updates 4980.
+| R@1,mIoU 0.4314 | R@1,IoU@0.1 0.7568 | R@1,IoU@0.3 0.6707 | R@1,IoU@0.5 0.4797 | R@1,IoU@0.7 0.2160 | R@1,IoU@0.9 0.0323 | R@5,mIoU 0.6641 | R@5,IoU@0.1 0.9870 | R@5,IoU@0.3 0.9645 | R@5,IoU@0.5 0.8170 | R@5,IoU@0.7 0.4905 | R@5,IoU@0.9 0.0804 |
+============================================================
+Start Epoch 16
+Epoch 16, Batch 50, lr = 0.00011, final_loss = 2.2587, nll_loss = 2.1483, ref_nll_loss = 2.3691, ivc_loss = 0.0331, neg_loss_1 = 0.0036, neg_loss_2 = 0.0046, ref_loss = 0.0156, div_loss = 0.0031, 0.334 seconds/batch
+Epoch 16, Batch 100, lr = 0.00011, final_loss = 2.2344, nll_loss = 2.1231, ref_nll_loss = 2.3457, ivc_loss = 0.0339, neg_loss_1 = 0.0021, neg_loss_2 = 0.0054, ref_loss = 0.0166, div_loss = 0.0033, 0.333 seconds/batch
+Epoch 16, Batch 150, lr = 0.00011, final_loss = 2.2738, nll_loss = 2.1639, ref_nll_loss = 2.3837, ivc_loss = 0.0350, neg_loss_1 = 0.0024, neg_loss_2 = 0.0051, ref_loss = 0.0181, div_loss = 0.0031, 0.333 seconds/batch
+Epoch 16, Batch 200, lr = 0.00011, final_loss = 2.2802, nll_loss = 2.1667, ref_nll_loss = 2.3936, ivc_loss = 0.0356, neg_loss_1 = 0.0031, neg_loss_2 = 0.0066, ref_loss = 0.0166, div_loss = 0.0031, 0.333 seconds/batch
+Epoch 16, Batch 250, lr = 0.00011, final_loss = 2.2750, nll_loss = 2.1621, ref_nll_loss = 2.3879, ivc_loss = 0.0350, neg_loss_1 = 0.0022, neg_loss_2 = 0.0052, ref_loss = 0.0175, div_loss = 0.0034, 0.333 seconds/batch
+Epoch 16, Batch 300, lr = 0.00011, final_loss = 2.2544, nll_loss = 2.1438, ref_nll_loss = 2.3650, ivc_loss = 0.0329, neg_loss_1 = 0.0025, neg_loss_2 = 0.0046, ref_loss = 0.0165, div_loss = 0.0031, 0.333 seconds/batch
+Epoch 16, Batch 332, lr = 0.00011, final_loss = 2.2577, nll_loss = 2.1427, ref_nll_loss = 2.3727, ivc_loss = 0.0349, neg_loss_1 = 0.0038, neg_loss_2 = 0.0054, ref_loss = 0.0161, div_loss = 0.0032, 0.333 seconds/batch
+save model to checkpoints/charades/base\model-16.pt, num_updates 5312.
+| R@1,mIoU 0.4351 | R@1,IoU@0.1 0.7565 | R@1,IoU@0.3 0.6669 | R@1,IoU@0.5 0.4918 | R@1,IoU@0.7 0.2296 | R@1,IoU@0.9 0.0317 | R@5,mIoU 0.6726 | R@5,IoU@0.1 0.9902 | R@5,IoU@0.3 0.9645 | R@5,IoU@0.5 0.8290 | R@5,IoU@0.7 0.5158 | R@5,IoU@0.9 0.0801 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 17
+Epoch 17, Batch 50, lr = 0.00011, final_loss = 2.2118, nll_loss = 2.1002, ref_nll_loss = 2.3233, ivc_loss = 0.0333, neg_loss_1 = 0.0028, neg_loss_2 = 0.0049, ref_loss = 0.0165, div_loss = 0.0031, 0.334 seconds/batch
+Epoch 17, Batch 100, lr = 0.00011, final_loss = 2.2345, nll_loss = 2.1195, ref_nll_loss = 2.3495, ivc_loss = 0.0333, neg_loss_1 = 0.0024, neg_loss_2 = 0.0059, ref_loss = 0.0159, div_loss = 0.0030, 0.332 seconds/batch
+Epoch 17, Batch 150, lr = 0.00011, final_loss = 2.2417, nll_loss = 2.1258, ref_nll_loss = 2.3575, ivc_loss = 0.0309, neg_loss_1 = 0.0024, neg_loss_2 = 0.0051, ref_loss = 0.0142, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 17, Batch 200, lr = 0.00011, final_loss = 2.2252, nll_loss = 2.1151, ref_nll_loss = 2.3352, ivc_loss = 0.0337, neg_loss_1 = 0.0028, neg_loss_2 = 0.0048, ref_loss = 0.0166, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 17, Batch 250, lr = 0.00011, final_loss = 2.2526, nll_loss = 2.1415, ref_nll_loss = 2.3637, ivc_loss = 0.0369, neg_loss_1 = 0.0033, neg_loss_2 = 0.0051, ref_loss = 0.0187, div_loss = 0.0033, 0.332 seconds/batch
+Epoch 17, Batch 300, lr = 0.00011, final_loss = 2.2622, nll_loss = 2.1500, ref_nll_loss = 2.3744, ivc_loss = 0.0336, neg_loss_1 = 0.0032, neg_loss_2 = 0.0067, ref_loss = 0.0143, div_loss = 0.0031, 0.332 seconds/batch
+Epoch 17, Batch 332, lr = 0.00011, final_loss = 2.2390, nll_loss = 2.1300, ref_nll_loss = 2.3480, ivc_loss = 0.0348, neg_loss_1 = 0.0033, neg_loss_2 = 0.0050, ref_loss = 0.0174, div_loss = 0.0030, 0.332 seconds/batch
+save model to checkpoints/charades/base\model-17.pt, num_updates 5644.
+| R@1,mIoU 0.4382 | R@1,IoU@0.1 0.7654 | R@1,IoU@0.3 0.6770 | R@1,IoU@0.5 0.4896 | R@1,IoU@0.7 0.2296 | R@1,IoU@0.9 0.0332 | R@5,mIoU 0.6705 | R@5,IoU@0.1 0.9886 | R@5,IoU@0.3 0.9652 | R@5,IoU@0.5 0.8290 | R@5,IoU@0.7 0.5054 | R@5,IoU@0.9 0.0845 |
+        1 file(s) copied.
+Best results have been updated.
+============================================================
+Start Epoch 18
+Epoch 18, Batch 50, lr = 0.00011, final_loss = 2.2158, nll_loss = 2.1034, ref_nll_loss = 2.3282, ivc_loss = 0.0319, neg_loss_1 = 0.0025, neg_loss_2 = 0.0047, ref_loss = 0.0156, div_loss = 0.0030, 0.331 seconds/batch
+Epoch 18, Batch 100, lr = 0.00011, final_loss = 2.2050, nll_loss = 2.0928, ref_nll_loss = 2.3173, ivc_loss = 0.0319, neg_loss_1 = 0.0023, neg_loss_2 = 0.0045, ref_loss = 0.0159, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 18, Batch 150, lr = 0.00011, final_loss = 2.2198, nll_loss = 2.1079, ref_nll_loss = 2.3317, ivc_loss = 0.0339, neg_loss_1 = 0.0029, neg_loss_2 = 0.0052, ref_loss = 0.0166, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 18, Batch 200, lr = 0.00010, final_loss = 2.2232, nll_loss = 2.1107, ref_nll_loss = 2.3357, ivc_loss = 0.0338, neg_loss_1 = 0.0030, neg_loss_2 = 0.0044, ref_loss = 0.0172, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 18, Batch 250, lr = 0.00010, final_loss = 2.2217, nll_loss = 2.1087, ref_nll_loss = 2.3346, ivc_loss = 0.0353, neg_loss_1 = 0.0030, neg_loss_2 = 0.0052, ref_loss = 0.0172, div_loss = 0.0033, 0.331 seconds/batch
+Epoch 18, Batch 300, lr = 0.00010, final_loss = 2.2229, nll_loss = 2.1075, ref_nll_loss = 2.3383, ivc_loss = 0.0335, neg_loss_1 = 0.0024, neg_loss_2 = 0.0042, ref_loss = 0.0176, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 18, Batch 332, lr = 0.00010, final_loss = 2.2243, nll_loss = 2.1107, ref_nll_loss = 2.3379, ivc_loss = 0.0333, neg_loss_1 = 0.0025, neg_loss_2 = 0.0052, ref_loss = 0.0161, div_loss = 0.0032, 0.330 seconds/batch
+save model to checkpoints/charades/base\model-18.pt, num_updates 5976.
+| R@1,mIoU 0.4363 | R@1,IoU@0.1 0.7628 | R@1,IoU@0.3 0.6754 | R@1,IoU@0.5 0.4886 | R@1,IoU@0.7 0.2122 | R@1,IoU@0.9 0.0364 | R@5,mIoU 0.6643 | R@5,IoU@0.1 0.9851 | R@5,IoU@0.3 0.9601 | R@5,IoU@0.5 0.8110 | R@5,IoU@0.7 0.4953 | R@5,IoU@0.9 0.0830 |
+============================================================
+Start Epoch 19
+Epoch 19, Batch 50, lr = 0.00010, final_loss = 2.1880, nll_loss = 2.0804, ref_nll_loss = 2.2956, ivc_loss = 0.0341, neg_loss_1 = 0.0026, neg_loss_2 = 0.0043, ref_loss = 0.0172, div_loss = 0.0033, 0.332 seconds/batch
+Epoch 19, Batch 100, lr = 0.00010, final_loss = 2.2058, nll_loss = 2.0906, ref_nll_loss = 2.3210, ivc_loss = 0.0331, neg_loss_1 = 0.0026, neg_loss_2 = 0.0039, ref_loss = 0.0174, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 19, Batch 150, lr = 0.00010, final_loss = 2.1860, nll_loss = 2.0696, ref_nll_loss = 2.3024, ivc_loss = 0.0329, neg_loss_1 = 0.0024, neg_loss_2 = 0.0042, ref_loss = 0.0170, div_loss = 0.0031, 0.331 seconds/batch
+Epoch 19, Batch 200, lr = 0.00010, final_loss = 2.1880, nll_loss = 2.0709, ref_nll_loss = 2.3052, ivc_loss = 0.0306, neg_loss_1 = 0.0019, neg_loss_2 = 0.0047, ref_loss = 0.0142, div_loss = 0.0033, 0.330 seconds/batch
+Epoch 19, Batch 250, lr = 0.00010, final_loss = 2.2266, nll_loss = 2.1123, ref_nll_loss = 2.3410, ivc_loss = 0.0321, neg_loss_1 = 0.0019, neg_loss_2 = 0.0048, ref_loss = 0.0157, div_loss = 0.0032, 0.330 seconds/batch
+Epoch 19, Batch 300, lr = 0.00010, final_loss = 2.2188, nll_loss = 2.1059, ref_nll_loss = 2.3316, ivc_loss = 0.0363, neg_loss_1 = 0.0025, neg_loss_2 = 0.0058, ref_loss = 0.0175, div_loss = 0.0035, 0.330 seconds/batch
+Epoch 19, Batch 332, lr = 0.00010, final_loss = 2.1816, nll_loss = 2.0675, ref_nll_loss = 2.2956, ivc_loss = 0.0371, neg_loss_1 = 0.0035, neg_loss_2 = 0.0047, ref_loss = 0.0195, div_loss = 0.0031, 0.330 seconds/batch
+save model to checkpoints/charades/base\model-19.pt, num_updates 6308.
+| R@1,mIoU 0.4251 | R@1,IoU@0.1 0.7505 | R@1,IoU@0.3 0.6567 | R@1,IoU@0.5 0.4690 | R@1,IoU@0.7 0.2156 | R@1,IoU@0.9 0.0320 | R@5,mIoU 0.6659 | R@5,IoU@0.1 0.9854 | R@5,IoU@0.3 0.9588 | R@5,IoU@0.5 0.8198 | R@5,IoU@0.7 0.5006 | R@5,IoU@0.9 0.0842 |
+============================================================
+Start Epoch 20
+Epoch 20, Batch 50, lr = 0.00010, final_loss = 2.1727, nll_loss = 2.0644, ref_nll_loss = 2.2811, ivc_loss = 0.0347, neg_loss_1 = 0.0025, neg_loss_2 = 0.0043, ref_loss = 0.0178, div_loss = 0.0034, 0.334 seconds/batch
+Epoch 20, Batch 100, lr = 0.00010, final_loss = 2.1773, nll_loss = 2.0664, ref_nll_loss = 2.2883, ivc_loss = 0.0351, neg_loss_1 = 0.0029, neg_loss_2 = 0.0045, ref_loss = 0.0181, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 20, Batch 150, lr = 0.00010, final_loss = 2.1733, nll_loss = 2.0616, ref_nll_loss = 2.2849, ivc_loss = 0.0315, neg_loss_1 = 0.0014, neg_loss_2 = 0.0040, ref_loss = 0.0165, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 20, Batch 200, lr = 0.00010, final_loss = 2.1811, nll_loss = 2.0684, ref_nll_loss = 2.2938, ivc_loss = 0.0335, neg_loss_1 = 0.0030, neg_loss_2 = 0.0038, ref_loss = 0.0171, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 20, Batch 250, lr = 0.00010, final_loss = 2.1802, nll_loss = 2.0642, ref_nll_loss = 2.2963, ivc_loss = 0.0341, neg_loss_1 = 0.0022, neg_loss_2 = 0.0055, ref_loss = 0.0163, div_loss = 0.0034, 0.333 seconds/batch
+Epoch 20, Batch 300, lr = 0.00010, final_loss = 2.2064, nll_loss = 2.0904, ref_nll_loss = 2.3223, ivc_loss = 0.0329, neg_loss_1 = 0.0022, neg_loss_2 = 0.0043, ref_loss = 0.0167, div_loss = 0.0033, 0.335 seconds/batch
+Epoch 20, Batch 332, lr = 0.00010, final_loss = 2.1969, nll_loss = 2.0779, ref_nll_loss = 2.3160, ivc_loss = 0.0327, neg_loss_1 = 0.0017, neg_loss_2 = 0.0048, ref_loss = 0.0161, div_loss = 0.0034, 0.336 seconds/batch
+save model to checkpoints/charades/base\model-20.pt, num_updates 6640.
+| R@1,mIoU 0.4260 | R@1,IoU@0.1 0.7533 | R@1,IoU@0.3 0.6605 | R@1,IoU@0.5 0.4721 | R@1,IoU@0.7 0.2125 | R@1,IoU@0.9 0.0310 | R@5,mIoU 0.6644 | R@5,IoU@0.1 0.9848 | R@5,IoU@0.3 0.9598 | R@5,IoU@0.5 0.8141 | R@5,IoU@0.7 0.4962 | R@5,IoU@0.9 0.0849 |
+============================================================
+Start Epoch 21
+Epoch 21, Batch 50, lr = 0.00010, final_loss = 2.1480, nll_loss = 2.0354, ref_nll_loss = 2.2605, ivc_loss = 0.0325, neg_loss_1 = 0.0016, neg_loss_2 = 0.0037, ref_loss = 0.0171, div_loss = 0.0034, 0.344 seconds/batch
+Epoch 21, Batch 100, lr = 0.00010, final_loss = 2.1597, nll_loss = 2.0435, ref_nll_loss = 2.2758, ivc_loss = 0.0306, neg_loss_1 = 0.0012, neg_loss_2 = 0.0047, ref_loss = 0.0149, div_loss = 0.0033, 0.343 seconds/batch
+Epoch 21, Batch 150, lr = 0.00010, final_loss = 2.1652, nll_loss = 2.0534, ref_nll_loss = 2.2769, ivc_loss = 0.0359, neg_loss_1 = 0.0023, neg_loss_2 = 0.0046, ref_loss = 0.0197, div_loss = 0.0031, 0.345 seconds/batch
+Epoch 21, Batch 200, lr = 0.00010, final_loss = 2.1864, nll_loss = 2.0732, ref_nll_loss = 2.2996, ivc_loss = 0.0337, neg_loss_1 = 0.0024, neg_loss_2 = 0.0040, ref_loss = 0.0177, div_loss = 0.0032, 0.345 seconds/batch
+Epoch 21, Batch 250, lr = 0.00010, final_loss = 2.1781, nll_loss = 2.0635, ref_nll_loss = 2.2927, ivc_loss = 0.0340, neg_loss_1 = 0.0027, neg_loss_2 = 0.0037, ref_loss = 0.0176, div_loss = 0.0034, 0.342 seconds/batch
+Epoch 21, Batch 300, lr = 0.00010, final_loss = 2.1560, nll_loss = 2.0419, ref_nll_loss = 2.2701, ivc_loss = 0.0342, neg_loss_1 = 0.0020, neg_loss_2 = 0.0048, ref_loss = 0.0176, div_loss = 0.0032, 0.341 seconds/batch
+Epoch 21, Batch 332, lr = 0.00010, final_loss = 2.1917, nll_loss = 2.0747, ref_nll_loss = 2.3087, ivc_loss = 0.0331, neg_loss_1 = 0.0017, neg_loss_2 = 0.0040, ref_loss = 0.0175, div_loss = 0.0033, 0.340 seconds/batch
+save model to checkpoints/charades/base\model-21.pt, num_updates 6972.
+| R@1,mIoU 0.4340 | R@1,IoU@0.1 0.7587 | R@1,IoU@0.3 0.6704 | R@1,IoU@0.5 0.4873 | R@1,IoU@0.7 0.2248 | R@1,IoU@0.9 0.0329 | R@5,mIoU 0.6675 | R@5,IoU@0.1 0.9892 | R@5,IoU@0.3 0.9614 | R@5,IoU@0.5 0.8208 | R@5,IoU@0.7 0.5013 | R@5,IoU@0.9 0.0833 |
+============================================================
+Start Epoch 22
+Epoch 22, Batch 50, lr = 0.00010, final_loss = 2.1480, nll_loss = 2.0360, ref_nll_loss = 2.2601, ivc_loss = 0.0307, neg_loss_1 = 0.0016, neg_loss_2 = 0.0030, ref_loss = 0.0164, div_loss = 0.0032, 0.334 seconds/batch
+Epoch 22, Batch 100, lr = 0.00010, final_loss = 2.1442, nll_loss = 2.0299, ref_nll_loss = 2.2585, ivc_loss = 0.0304, neg_loss_1 = 0.0018, neg_loss_2 = 0.0026, ref_loss = 0.0165, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 22, Batch 150, lr = 0.00009, final_loss = 2.1601, nll_loss = 2.0401, ref_nll_loss = 2.2801, ivc_loss = 0.0315, neg_loss_1 = 0.0013, neg_loss_2 = 0.0043, ref_loss = 0.0167, div_loss = 0.0031, 0.333 seconds/batch
+Epoch 22, Batch 200, lr = 0.00009, final_loss = 2.1521, nll_loss = 2.0383, ref_nll_loss = 2.2660, ivc_loss = 0.0332, neg_loss_1 = 0.0025, neg_loss_2 = 0.0036, ref_loss = 0.0175, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 22, Batch 250, lr = 0.00009, final_loss = 2.1525, nll_loss = 2.0393, ref_nll_loss = 2.2656, ivc_loss = 0.0326, neg_loss_1 = 0.0025, neg_loss_2 = 0.0041, ref_loss = 0.0163, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 22, Batch 300, lr = 0.00009, final_loss = 2.1372, nll_loss = 2.0190, ref_nll_loss = 2.2553, ivc_loss = 0.0330, neg_loss_1 = 0.0018, neg_loss_2 = 0.0054, ref_loss = 0.0162, div_loss = 0.0032, 0.333 seconds/batch
+Epoch 22, Batch 332, lr = 0.00009, final_loss = 2.1464, nll_loss = 2.0293, ref_nll_loss = 2.2635, ivc_loss = 0.0337, neg_loss_1 = 0.0026, neg_loss_2 = 0.0040, ref_loss = 0.0172, div_loss = 0.0033, 0.332 seconds/batch
+save model to checkpoints/charades/base\model-22.pt, num_updates 7304.
+| R@1,mIoU 0.4119 | R@1,IoU@0.1 0.7324 | R@1,IoU@0.3 0.6381 | R@1,IoU@0.5 0.4531 | R@1,IoU@0.7 0.2020 | R@1,IoU@0.9 0.0336 | R@5,mIoU 0.6599 | R@5,IoU@0.1 0.9848 | R@5,IoU@0.3 0.9547 | R@5,IoU@0.5 0.8059 | R@5,IoU@0.7 0.4883 | R@5,IoU@0.9 0.0845 |
+============================================================
+Start Epoch 23
+Epoch 23, Batch 50, lr = 0.00009, final_loss = 2.1327, nll_loss = 2.0180, ref_nll_loss = 2.2474, ivc_loss = 0.0315, neg_loss_1 = 0.0024, neg_loss_2 = 0.0035, ref_loss = 0.0161, div_loss = 0.0032, 0.343 seconds/batch
+Epoch 23, Batch 100, lr = 0.00009, final_loss = 2.1393, nll_loss = 2.0207, ref_nll_loss = 2.2580, ivc_loss = 0.0311, neg_loss_1 = 0.0018, neg_loss_2 = 0.0047, ref_loss = 0.0150, div_loss = 0.0032, 0.347 seconds/batch
+Epoch 23, Batch 150, lr = 0.00009, final_loss = 2.1336, nll_loss = 2.0178, ref_nll_loss = 2.2494, ivc_loss = 0.0309, neg_loss_1 = 0.0019, neg_loss_2 = 0.0036, ref_loss = 0.0164, div_loss = 0.0030, 0.349 seconds/batch
+Epoch 23, Batch 200, lr = 0.00009, final_loss = 2.1113, nll_loss = 2.0007, ref_nll_loss = 2.2218, ivc_loss = 0.0331, neg_loss_1 = 0.0019, neg_loss_2 = 0.0043, ref_loss = 0.0177, div_loss = 0.0031, 0.349 seconds/batch
+Epoch 23, Batch 250, lr = 0.00009, final_loss = 2.1207, nll_loss = 2.0067, ref_nll_loss = 2.2346, ivc_loss = 0.0341, neg_loss_1 = 0.0026, neg_loss_2 = 0.0043, ref_loss = 0.0182, div_loss = 0.0030, 0.349 seconds/batch
+Epoch 23, Batch 300, lr = 0.00009, final_loss = 2.1774, nll_loss = 2.0601, ref_nll_loss = 2.2948, ivc_loss = 0.0330, neg_loss_1 = 0.0015, neg_loss_2 = 0.0037, ref_loss = 0.0182, div_loss = 0.0032, 0.350 seconds/batch
+Epoch 23, Batch 332, lr = 0.00009, final_loss = 2.1308, nll_loss = 2.0135, ref_nll_loss = 2.2482, ivc_loss = 0.0301, neg_loss_1 = 0.0007, neg_loss_2 = 0.0029, ref_loss = 0.0172, div_loss = 0.0031, 0.349 seconds/batch
+save model to checkpoints/charades/base\model-23.pt, num_updates 7636.
+| R@1,mIoU 0.4278 | R@1,IoU@0.1 0.7492 | R@1,IoU@0.3 0.6596 | R@1,IoU@0.5 0.4816 | R@1,IoU@0.7 0.2201 | R@1,IoU@0.9 0.0332 | R@5,mIoU 0.6648 | R@5,IoU@0.1 0.9861 | R@5,IoU@0.3 0.9579 | R@5,IoU@0.5 0.8125 | R@5,IoU@0.7 0.4987 | R@5,IoU@0.9 0.0845 |
+============================================================
+Start Epoch 24
+Epoch 24, Batch 50, lr = 0.00009, final_loss = 2.1138, nll_loss = 2.0000, ref_nll_loss = 2.2277, ivc_loss = 0.0326, neg_loss_1 = 0.0019, neg_loss_2 = 0.0046, ref_loss = 0.0167, div_loss = 0.0031, 0.346 seconds/batch
+Epoch 24, Batch 100, lr = 0.00009, final_loss = 2.1093, nll_loss = 1.9947, ref_nll_loss = 2.2239, ivc_loss = 0.0315, neg_loss_1 = 0.0021, neg_loss_2 = 0.0032, ref_loss = 0.0162, div_loss = 0.0033, 0.348 seconds/batch
+Epoch 24, Batch 150, lr = 0.00009, final_loss = 2.1072, nll_loss = 1.9918, ref_nll_loss = 2.2227, ivc_loss = 0.0329, neg_loss_1 = 0.0020, neg_loss_2 = 0.0036, ref_loss = 0.0169, div_loss = 0.0035, 0.346 seconds/batch
+Epoch 24, Batch 200, lr = 0.00009, final_loss = 2.1543, nll_loss = 2.0420, ref_nll_loss = 2.2667, ivc_loss = 0.0349, neg_loss_1 = 0.0023, neg_loss_2 = 0.0038, ref_loss = 0.0186, div_loss = 0.0034, 0.344 seconds/batch
+Epoch 24, Batch 250, lr = 0.00009, final_loss = 2.1334, nll_loss = 2.0182, ref_nll_loss = 2.2486, ivc_loss = 0.0328, neg_loss_1 = 0.0024, neg_loss_2 = 0.0036, ref_loss = 0.0173, div_loss = 0.0032, 0.342 seconds/batch
+Epoch 24, Batch 300, lr = 0.00009, final_loss = 2.1188, nll_loss = 1.9955, ref_nll_loss = 2.2422, ivc_loss = 0.0302, neg_loss_1 = 0.0016, neg_loss_2 = 0.0053, ref_loss = 0.0136, div_loss = 0.0032, 0.342 seconds/batch
+Epoch 24, Batch 332, lr = 0.00009, final_loss = 2.1020, nll_loss = 1.9864, ref_nll_loss = 2.2177, ivc_loss = 0.0338, neg_loss_1 = 0.0025, neg_loss_2 = 0.0042, ref_loss = 0.0171, div_loss = 0.0034, 0.342 seconds/batch
+save model to checkpoints/charades/base\model-24.pt, num_updates 7968.
+| R@1,mIoU 0.4245 | R@1,IoU@0.1 0.7400 | R@1,IoU@0.3 0.6552 | R@1,IoU@0.5 0.4709 | R@1,IoU@0.7 0.2125 | R@1,IoU@0.9 0.0364 | R@5,mIoU 0.6636 | R@5,IoU@0.1 0.9902 | R@5,IoU@0.3 0.9582 | R@5,IoU@0.5 0.8078 | R@5,IoU@0.7 0.4801 | R@5,IoU@0.9 0.0902 |
+============================================================
+Start Epoch 25
+Epoch 25, Batch 50, lr = 0.00009, final_loss = 2.0790, nll_loss = 1.9630, ref_nll_loss = 2.1950, ivc_loss = 0.0324, neg_loss_1 = 0.0025, neg_loss_2 = 0.0044, ref_loss = 0.0152, div_loss = 0.0034, 0.336 seconds/batch
+Epoch 25, Batch 100, lr = 0.00009, final_loss = 2.0841, nll_loss = 1.9683, ref_nll_loss = 2.2000, ivc_loss = 0.0329, neg_loss_1 = 0.0027, neg_loss_2 = 0.0041, ref_loss = 0.0166, div_loss = 0.0032, 0.335 seconds/batch
+Epoch 25, Batch 150, lr = 0.00009, final_loss = 2.0940, nll_loss = 1.9775, ref_nll_loss = 2.2106, ivc_loss = 0.0293, neg_loss_1 = 0.0017, neg_loss_2 = 0.0030, ref_loss = 0.0151, div_loss = 0.0031, 0.338 seconds/batch
+Epoch 25, Batch 200, lr = 0.00009, final_loss = 2.0938, nll_loss = 1.9751, ref_nll_loss = 2.2125, ivc_loss = 0.0310, neg_loss_1 = 0.0023, neg_loss_2 = 0.0037, ref_loss = 0.0156, div_loss = 0.0031, 0.339 seconds/batch
+Epoch 25, Batch 250, lr = 0.00009, final_loss = 2.1100, nll_loss = 1.9959, ref_nll_loss = 2.2240, ivc_loss = 0.0310, neg_loss_1 = 0.0020, neg_loss_2 = 0.0036, ref_loss = 0.0162, div_loss = 0.0030, 0.340 seconds/batch
+Epoch 25, Batch 300, lr = 0.00009, final_loss = 2.1503, nll_loss = 2.0307, ref_nll_loss = 2.2698, ivc_loss = 0.0308, neg_loss_1 = 0.0024, neg_loss_2 = 0.0031, ref_loss = 0.0158, div_loss = 0.0032, 0.342 seconds/batch
+Epoch 25, Batch 332, lr = 0.00009, final_loss = 2.0834, nll_loss = 1.9664, ref_nll_loss = 2.2003, ivc_loss = 0.0310, neg_loss_1 = 0.0016, neg_loss_2 = 0.0041, ref_loss = 0.0157, div_loss = 0.0032, 0.342 seconds/batch
+save model to checkpoints/charades/base\model-25.pt, num_updates 8300.
+| R@1,mIoU 0.4225 | R@1,IoU@0.1 0.7454 | R@1,IoU@0.3 0.6533 | R@1,IoU@0.5 0.4683 | R@1,IoU@0.7 0.2077 | R@1,IoU@0.9 0.0367 | R@5,mIoU 0.6642 | R@5,IoU@0.1 0.9861 | R@5,IoU@0.3 0.9573 | R@5,IoU@0.5 0.8163 | R@5,IoU@0.7 0.4937 | R@5,IoU@0.9 0.0852 |
+============================================================
+Start Epoch 26
+Epoch 26, Batch 50, lr = 0.00009, final_loss = 2.0776, nll_loss = 1.9574, ref_nll_loss = 2.1977, ivc_loss = 0.0314, neg_loss_1 = 0.0018, neg_loss_2 = 0.0040, ref_loss = 0.0159, div_loss = 0.0032, 0.341 seconds/batch
+Epoch 26, Batch 100, lr = 0.00009, final_loss = 2.0643, nll_loss = 1.9459, ref_nll_loss = 2.1828, ivc_loss = 0.0318, neg_loss_1 = 0.0020, neg_loss_2 = 0.0039, ref_loss = 0.0167, div_loss = 0.0031, 0.344 seconds/batch
+Epoch 26, Batch 150, lr = 0.00009, final_loss = 2.0965, nll_loss = 1.9807, ref_nll_loss = 2.2122, ivc_loss = 0.0331, neg_loss_1 = 0.0017, neg_loss_2 = 0.0037, ref_loss = 0.0182, div_loss = 0.0031, 0.343 seconds/batch
+Epoch 26, Batch 200, lr = 0.00009, final_loss = 2.0950, nll_loss = 1.9761, ref_nll_loss = 2.2138, ivc_loss = 0.0338, neg_loss_1 = 0.0020, neg_loss_2 = 0.0033, ref_loss = 0.0186, div_loss = 0.0033, 0.342 seconds/batch
+Epoch 26, Batch 250, lr = 0.00009, final_loss = 2.1096, nll_loss = 1.9918, ref_nll_loss = 2.2275, ivc_loss = 0.0348, neg_loss_1 = 0.0030, neg_loss_2 = 0.0045, ref_loss = 0.0180, div_loss = 0.0031, 0.343 seconds/batch
+Epoch 26, Batch 300, lr = 0.00009, final_loss = 2.1071, nll_loss = 1.9910, ref_nll_loss = 2.2231, ivc_loss = 0.0331, neg_loss_1 = 0.0019, neg_loss_2 = 0.0048, ref_loss = 0.0169, div_loss = 0.0031, 0.344 seconds/batch
+Epoch 26, Batch 332, lr = 0.00009, final_loss = 2.0859, nll_loss = 1.9693, ref_nll_loss = 2.2025, ivc_loss = 0.0310, neg_loss_1 = 0.0020, neg_loss_2 = 0.0030, ref_loss = 0.0169, div_loss = 0.0030, 0.344 seconds/batch
+save model to checkpoints/charades/base\model-26.pt, num_updates 8632.
+| R@1,mIoU 0.4207 | R@1,IoU@0.1 0.7530 | R@1,IoU@0.3 0.6523 | R@1,IoU@0.5 0.4550 | R@1,IoU@0.7 0.2096 | R@1,IoU@0.9 0.0339 | R@5,mIoU 0.6641 | R@5,IoU@0.1 0.9883 | R@5,IoU@0.3 0.9601 | R@5,IoU@0.5 0.8068 | R@5,IoU@0.7 0.4867 | R@5,IoU@0.9 0.0890 |
+============================================================
+Start Epoch 27
+Epoch 27, Batch 50, lr = 0.00009, final_loss = 2.0585, nll_loss = 1.9453, ref_nll_loss = 2.1716, ivc_loss = 0.0343, neg_loss_1 = 0.0017, neg_loss_2 = 0.0046, ref_loss = 0.0185, div_loss = 0.0031, 0.351 seconds/batch
+Epoch 27, Batch 100, lr = 0.00009, final_loss = 2.0667, nll_loss = 1.9493, ref_nll_loss = 2.1842, ivc_loss = 0.0312, neg_loss_1 = 0.0015, neg_loss_2 = 0.0028, ref_loss = 0.0177, div_loss = 0.0030, 0.346 seconds/batch
+Epoch 27, Batch 150, lr = 0.00009, final_loss = 2.0747, nll_loss = 1.9571, ref_nll_loss = 2.1923, ivc_loss = 0.0310, neg_loss_1 = 0.0022, neg_loss_2 = 0.0034, ref_loss = 0.0161, div_loss = 0.0031, 0.347 seconds/batch
+Epoch 27, Batch 200, lr = 0.00009, final_loss = 2.0705, nll_loss = 1.9515, ref_nll_loss = 2.1896, ivc_loss = 0.0303, neg_loss_1 = 0.0007, neg_loss_2 = 0.0026, ref_loss = 0.0176, div_loss = 0.0031, 0.348 seconds/batch
+Epoch 27, Batch 250, lr = 0.00008, final_loss = 2.0881, nll_loss = 1.9667, ref_nll_loss = 2.2094, ivc_loss = 0.0312, neg_loss_1 = 0.0012, neg_loss_2 = 0.0037, ref_loss = 0.0168, div_loss = 0.0031, 0.347 seconds/batch
+Epoch 27, Batch 300, lr = 0.00008, final_loss = 2.0842, nll_loss = 1.9665, ref_nll_loss = 2.2019, ivc_loss = 0.0315, neg_loss_1 = 0.0019, neg_loss_2 = 0.0037, ref_loss = 0.0163, div_loss = 0.0032, 0.344 seconds/batch
+Epoch 27, Batch 332, lr = 0.00008, final_loss = 2.0795, nll_loss = 1.9637, ref_nll_loss = 2.1953, ivc_loss = 0.0333, neg_loss_1 = 0.0021, neg_loss_2 = 0.0027, ref_loss = 0.0195, div_loss = 0.0030, 0.343 seconds/batch
+save model to checkpoints/charades/base\model-27.pt, num_updates 8964.
+| R@1,mIoU 0.4329 | R@1,IoU@0.1 0.7641 | R@1,IoU@0.3 0.6669 | R@1,IoU@0.5 0.4810 | R@1,IoU@0.7 0.2141 | R@1,IoU@0.9 0.0374 | R@5,mIoU 0.6667 | R@5,IoU@0.1 0.9877 | R@5,IoU@0.3 0.9668 | R@5,IoU@0.5 0.8110 | R@5,IoU@0.7 0.4953 | R@5,IoU@0.9 0.0883 |
+============================================================
+Start Epoch 28
+Epoch 28, Batch 50, lr = 0.00008, final_loss = 2.0437, nll_loss = 1.9246, ref_nll_loss = 2.1628, ivc_loss = 0.0327, neg_loss_1 = 0.0015, neg_loss_2 = 0.0035, ref_loss = 0.0185, div_loss = 0.0031, 0.345 seconds/batch
+Epoch 28, Batch 100, lr = 0.00008, final_loss = 2.0471, nll_loss = 1.9312, ref_nll_loss = 2.1630, ivc_loss = 0.0336, neg_loss_1 = 0.0013, neg_loss_2 = 0.0045, ref_loss = 0.0186, div_loss = 0.0031, 0.350 seconds/batch
+Epoch 28, Batch 150, lr = 0.00008, final_loss = 2.0627, nll_loss = 1.9409, ref_nll_loss = 2.1846, ivc_loss = 0.0298, neg_loss_1 = 0.0015, neg_loss_2 = 0.0027, ref_loss = 0.0164, div_loss = 0.0031, 0.352 seconds/batch
+Epoch 28, Batch 200, lr = 0.00008, final_loss = 2.0659, nll_loss = 1.9519, ref_nll_loss = 2.1799, ivc_loss = 0.0336, neg_loss_1 = 0.0015, neg_loss_2 = 0.0034, ref_loss = 0.0195, div_loss = 0.0031, 0.352 seconds/batch
+Epoch 28, Batch 250, lr = 0.00008, final_loss = 2.0856, nll_loss = 1.9680, ref_nll_loss = 2.2032, ivc_loss = 0.0322, neg_loss_1 = 0.0024, neg_loss_2 = 0.0029, ref_loss = 0.0171, div_loss = 0.0033, 0.351 seconds/batch
+Epoch 28, Batch 300, lr = 0.00008, final_loss = 2.0710, nll_loss = 1.9496, ref_nll_loss = 2.1924, ivc_loss = 0.0324, neg_loss_1 = 0.0012, neg_loss_2 = 0.0033, ref_loss = 0.0185, div_loss = 0.0031, 0.350 seconds/batch
+Epoch 28, Batch 332, lr = 0.00008, final_loss = 2.0650, nll_loss = 1.9475, ref_nll_loss = 2.1825, ivc_loss = 0.0358, neg_loss_1 = 0.0025, neg_loss_2 = 0.0038, ref_loss = 0.0205, div_loss = 0.0030, 0.349 seconds/batch
+save model to checkpoints/charades/base\model-28.pt, num_updates 9296.
+| R@1,mIoU 0.4224 | R@1,IoU@0.1 0.7514 | R@1,IoU@0.3 0.6514 | R@1,IoU@0.5 0.4683 | R@1,IoU@0.7 0.2023 | R@1,IoU@0.9 0.0364 | R@5,mIoU 0.6630 | R@5,IoU@0.1 0.9892 | R@5,IoU@0.3 0.9579 | R@5,IoU@0.5 0.8097 | R@5,IoU@0.7 0.4839 | R@5,IoU@0.9 0.0896 |
+============================================================
+Start Epoch 29
+Epoch 29, Batch 50, lr = 0.00008, final_loss = 2.0390, nll_loss = 1.9203, ref_nll_loss = 2.1577, ivc_loss = 0.0301, neg_loss_1 = 0.0013, neg_loss_2 = 0.0029, ref_loss = 0.0163, div_loss = 0.0032, 0.337 seconds/batch
+Epoch 29, Batch 100, lr = 0.00008, final_loss = 2.0426, nll_loss = 1.9249, ref_nll_loss = 2.1604, ivc_loss = 0.0330, neg_loss_1 = 0.0032, neg_loss_2 = 0.0031, ref_loss = 0.0177, div_loss = 0.0030, 0.336 seconds/batch
+Epoch 29, Batch 150, lr = 0.00008, final_loss = 2.0427, nll_loss = 1.9280, ref_nll_loss = 2.1574, ivc_loss = 0.0321, neg_loss_1 = 0.0014, neg_loss_2 = 0.0032, ref_loss = 0.0178, div_loss = 0.0032, 0.336 seconds/batch
+Epoch 29, Batch 200, lr = 0.00008, final_loss = 2.0418, nll_loss = 1.9250, ref_nll_loss = 2.1585, ivc_loss = 0.0301, neg_loss_1 = 0.0014, neg_loss_2 = 0.0026, ref_loss = 0.0163, div_loss = 0.0032, 0.340 seconds/batch
+Epoch 29, Batch 250, lr = 0.00008, final_loss = 2.0463, nll_loss = 1.9271, ref_nll_loss = 2.1656, ivc_loss = 0.0317, neg_loss_1 = 0.0014, neg_loss_2 = 0.0044, ref_loss = 0.0165, div_loss = 0.0032, 0.341 seconds/batch
+Epoch 29, Batch 300, lr = 0.00008, final_loss = 2.0419, nll_loss = 1.9193, ref_nll_loss = 2.1644, ivc_loss = 0.0297, neg_loss_1 = 0.0018, neg_loss_2 = 0.0043, ref_loss = 0.0142, div_loss = 0.0032, 0.340 seconds/batch
+Epoch 29, Batch 332, lr = 0.00008, final_loss = 2.0653, nll_loss = 1.9517, ref_nll_loss = 2.1789, ivc_loss = 0.0319, neg_loss_1 = 0.0016, neg_loss_2 = 0.0041, ref_loss = 0.0172, div_loss = 0.0030, 0.339 seconds/batch
+save model to checkpoints/charades/base\model-29.pt, num_updates 9628.
+| R@1,mIoU 0.4104 | R@1,IoU@0.1 0.7312 | R@1,IoU@0.3 0.6324 | R@1,IoU@0.5 0.4516 | R@1,IoU@0.7 0.2023 | R@1,IoU@0.9 0.0339 | R@5,mIoU 0.6549 | R@5,IoU@0.1 0.9791 | R@5,IoU@0.3 0.9500 | R@5,IoU@0.5 0.7996 | R@5,IoU@0.7 0.4756 | R@5,IoU@0.9 0.0830 |
+============================================================
+Start Epoch 30
+Epoch 30, Batch 50, lr = 0.00008, final_loss = 2.0177, nll_loss = 1.8992, ref_nll_loss = 2.1362, ivc_loss = 0.0299, neg_loss_1 = 0.0013, neg_loss_2 = 0.0028, ref_loss = 0.0162, div_loss = 0.0032, 0.339 seconds/batch
+Epoch 30, Batch 100, lr = 0.00008, final_loss = 2.0062, nll_loss = 1.8870, ref_nll_loss = 2.1254, ivc_loss = 0.0312, neg_loss_1 = 0.0018, neg_loss_2 = 0.0023, ref_loss = 0.0178, div_loss = 0.0031, 0.334 seconds/batch
+Epoch 30, Batch 150, lr = 0.00008, final_loss = 2.0230, nll_loss = 1.9046, ref_nll_loss = 2.1414, ivc_loss = 0.0330, neg_loss_1 = 0.0022, neg_loss_2 = 0.0027, ref_loss = 0.0187, div_loss = 0.0031, 0.333 seconds/batch
+Epoch 30, Batch 200, lr = 0.00008, final_loss = 2.0608, nll_loss = 1.9418, ref_nll_loss = 2.1798, ivc_loss = 0.0310, neg_loss_1 = 0.0015, neg_loss_2 = 0.0038, ref_loss = 0.0168, div_loss = 0.0030, 0.332 seconds/batch
+Epoch 30, Batch 250, lr = 0.00008, final_loss = 2.0511, nll_loss = 1.9324, ref_nll_loss = 2.1699, ivc_loss = 0.0335, neg_loss_1 = 0.0019, neg_loss_2 = 0.0042, ref_loss = 0.0179, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 30, Batch 300, lr = 0.00008, final_loss = 2.0290, nll_loss = 1.9066, ref_nll_loss = 2.1514, ivc_loss = 0.0307, neg_loss_1 = 0.0014, neg_loss_2 = 0.0023, ref_loss = 0.0174, div_loss = 0.0032, 0.331 seconds/batch
+Epoch 30, Batch 332, lr = 0.00008, final_loss = 2.0317, nll_loss = 1.9110, ref_nll_loss = 2.1523, ivc_loss = 0.0304, neg_loss_1 = 0.0012, neg_loss_2 = 0.0035, ref_loss = 0.0162, div_loss = 0.0031, 0.331 seconds/batch
+save model to checkpoints/charades/base\model-30.pt, num_updates 9960.
+| R@1,mIoU 0.4151 | R@1,IoU@0.1 0.7394 | R@1,IoU@0.3 0.6374 | R@1,IoU@0.5 0.4522 | R@1,IoU@0.7 0.2008 | R@1,IoU@0.9 0.0361 | R@5,mIoU 0.6611 | R@5,IoU@0.1 0.9842 | R@5,IoU@0.3 0.9576 | R@5,IoU@0.5 0.8068 | R@5,IoU@0.7 0.4873 | R@5,IoU@0.9 0.0852 |
+============================================================
+Best results:
+| R@1,mIoU 0.4382 | R@1,IoU@0.1 0.7654 | R@1,IoU@0.3 0.6770 | R@1,IoU@0.5 0.4896 | R@1,IoU@0.7 0.2296 | R@1,IoU@0.9 0.0332 | R@5,mIoU 0.6705 | R@5,IoU@0.1 0.9886 | R@5,IoU@0.3 0.9652 | R@5,IoU@0.5 0.8290 | R@5,IoU@0.7 0.5054 | R@5,IoU@0.9 0.0845 |
+(cpl1) PS C:\Users\manas\Desktop\CS 597\project\cpl> 
